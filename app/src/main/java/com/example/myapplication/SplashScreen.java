@@ -9,6 +9,8 @@ import android.os.Handler;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.ui.login.LoginActivity;
+
 public class SplashScreen extends AppCompatActivity {
     private static int splashTime=3000;
     @Override
@@ -20,7 +22,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i =new Intent(SplashScreen.this,register.class);
+                Intent i =new Intent(SplashScreen.this, LoginActivity.class);
                 startActivity(i);
                 finish();
             }
