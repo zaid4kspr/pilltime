@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".more">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="13"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="30dp">
+
+    <LinearLayout
+        android:id="@+id/Measurements"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iconMeasurments"
+            android:layout_width="20dp"
+             android:layout_height="20dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/icon1" />
+
+        <TextView
+            android:id="@+id/textMeasurements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:text="Measurements"
+
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Notes"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iconNotes"
+            android:layout_width="20dp"
+             android:layout_height="20dp"
+ android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon2" />
+
+        <TextView
+            android:id="@+id/textNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="5"
+            android:text="Notes"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Appointments"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iconAppointments"
+            android:layout_width="20dp"
+             android:layout_height="20dp"
+ android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon3" />
+
+        <TextView
+            android:id="@+id/textAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="5"
+            android:text="Appointments"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Doctors"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iconDoctors"
+            android:layout_width="20dp"
+             android:layout_height="20dp"
+ android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon4" />
+
+        <TextView
+            android:id="@+id/textDoctors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="5"
+            android:text="Doctors"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Refills"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iconRefills"
+            android:layout_width="20dp"
+             android:layout_height="20dp"
+ android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon5" />
+
+        <TextView
+            android:id="@+id/textRefills"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="5"
+            android:text="Refills"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Report"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iconReport"
+            android:layout_width="20dp"
+             android:layout_height="20dp"
+ android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon6" />
+
+        <TextView
+            android:id="@+id/textReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="5"
+            android:text="Report"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Border"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
+
+        <TextView
+            android:id="@+id/textBorder"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="5"
+            android:background="@color/colorPrimaryDark"
+            android:breakStrategy="high_quality"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Settings"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iconSettings"
+            android:layout_width="20dp"
+             android:layout_height="20dp"
+ android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon7" />
+
+        <TextView
+            android:id="@+id/textSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="5"
+            android:text="Settings"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/HelpSupport"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iconHelpSupport"
+            android:layout_width="20dp"
+             android:layout_height="20dp"
+ android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon8" />
+
+        <TextView
+            android:id="@+id/textHelpSupport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="5"
+            android:text="Help &amp; Support"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Reminder"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iconReminder"
+            android:layout_width="20dp"
+             android:layout_height="20dp"
+ android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon9" />
+
+        <TextView
+            android:id="@+id/textReminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="5"
+            android:text="Reminder Troubleshooting"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+
+
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

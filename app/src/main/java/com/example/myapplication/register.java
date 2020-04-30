@@ -30,8 +30,8 @@ public class register extends AppCompatActivity {
 
     public void routeToMain(){
 
-    Intent i = new Intent(register.this,addMed.class);
-    startActivity(i);
+//    Intent i = new Intent(register.this,addMed.class);
+//    startActivity(i);
 
     }
 }
