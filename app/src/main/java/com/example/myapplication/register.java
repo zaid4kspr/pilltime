@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,13 +12,13 @@ public class register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        final Button button = (Button) findViewById(R.id.registerBtn);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // your handler code here
-                routeToMain();
-            }
-        });
+//        final Button button = (Button) findViewById(R.id.addMed1);
+////        button.setOnClickListener(new View.OnClickListener() {
+////            public void onClick(View v) {
+////                // your handler code here
+////                routeToMain();
+////            }
+////        });
 
 
 
@@ -30,8 +29,8 @@ public class register extends AppCompatActivity {
 
     public void routeToMain(){
 
-    Intent i = new Intent(register.this,addMed.class);
-    startActivity(i);
+//    Intent i = new Intent(register.this,addMed.class);
+//    startActivity(i);
 
     }
 }

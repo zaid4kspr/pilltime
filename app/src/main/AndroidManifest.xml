@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,13 +14,11 @@
         android:theme="@style/AppTheme">
         <activity android:name=".meas_select"></activity>
         <activity android:name=".measurements" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".settings" />
         <activity android:name=".activity_list_med" />
         <activity android:name=".dialog_take" />
         <activity android:name=".med_form" />
-        <activity android:name=".settings" />
-        <activity
-            android:name=".addMed"
-            android:label="@string/title_activity_add_med" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
