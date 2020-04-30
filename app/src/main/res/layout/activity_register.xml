@@ -150,7 +150,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/registerBtn"
+                    android:id="@+id/addMedZ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="0dp"
