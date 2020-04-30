@@ -13,4 +13,16 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string-array name="Time_med">
+        <item>Once daily</item>
+        <item>Twice daily</item>
+        <item>3 times a day</item>
+    </string-array>
+    <string-array name="nbr_Take">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+
+    </string-array>
+
 </resources>
