@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_frame_layout, new HomeCalendarPage()).commit();
 
         BottomNavigationView bottomNavigationView =findViewById(R.id.activity_main_bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
@@ -36,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
-//            case R.id.action_android:
-//                this.mainFragment.updateDesignWhenUserClickedBottomView(MainFragment.REQUEST_ANDROID);
-//                break;
+            case R.id.navigation_home:
+                selectedFragment = new HomeCalendarPage();
+                break;
                 case R.id.navigation_add:
                     selectedFragment = new fragment_add_med();
 //                this.mainFragment.updateDesignWhenUserClickedBottomView(MainFragment.REQUEST_LOGO);
