@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
-
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".meas_select"></activity>
+        <activity android:name=".add_temp"></activity>
+        <activity android:name=".temp" />
+        <activity android:name=".list_meas" />
+        <activity android:name=".meas_select" />
         <activity android:name=".measurements" />
         <activity android:name=".MainActivity" />
         <activity android:name=".settings" />

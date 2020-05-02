@@ -23,11 +23,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,23 +31,61 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
-
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:checked="true"
-                    android:text="itch_text"/>
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:checked="true"
-                    android:text="switch_text"/>
-                <Button
-                    android:id="@+id/addmeasBtn"
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="10">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:text="Temperature"></TextView>
+                <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="ADD" />
+                    android:weightSum="10"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10"
+                        android:text="Blood Pressure"></TextView>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                    />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10"
+                        android:text="Pulse"></TextView>
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/addmeasBtn"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Save" />
 
             </LinearLayout>
 
