@@ -23,7 +23,7 @@ import butterknife.OnClick;
 
 
 public class fragment_add_med extends Fragment {
-    @BindView(R.id.addMedZ) MaterialButton button1;
+    @BindView(R.id.addMed1) MaterialButton button1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,7 +42,7 @@ public class fragment_add_med extends Fragment {
     }
 
 
-    @OnClick(R.id.addMedZ)
+    @OnClick(R.id.addMed1)
     public void submit() {
         Intent i =new Intent(getActivity(), med_form.class);
         startActivity(i);

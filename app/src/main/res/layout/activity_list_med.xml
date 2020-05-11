@@ -34,7 +34,7 @@
         app:navGraph="@navigation/mobile_navigation" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/addMed1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#00FFFFFF"
@@ -107,7 +107,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/addMedZ"
+        android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
