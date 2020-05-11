@@ -14,13 +14,13 @@ public class activity_list_med extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_med);
 
-        Button BtnAdd = findViewById(R.id.addMedZ);
-        BtnAdd.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent i =new Intent(activity_list_med.this, med_form.class);
-                startActivity(i);            }
-        });
+//        Button BtnAdd = findViewById(R.id.addMedZ);
+//        BtnAdd.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                Intent i =new Intent(activity_list_med.this, med_form.class);
+//                startActivity(i);            }
+//        });
     }
 
 }

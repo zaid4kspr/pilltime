@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                     String name =response.body().getUser().getName();
                     Toast.makeText(LoginActivity.this, "Hello  " + name, Toast.LENGTH_SHORT).show();
 
-
+                    routeAfterLogin();
                 }else{
 
                     Toast.makeText(LoginActivity.this,   "Email / Password incorrect", Toast.LENGTH_SHORT).show();
