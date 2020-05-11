@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.widget.TimePicker;
 
 import android.os.Bundle;
@@ -14,7 +15,13 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
 public class med_form extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,14 @@ public class med_form extends AppCompatActivity implements AdapterView.OnItemSel
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+
+        Button BtnAdd = findViewById(R.id.addBtn);
+        BtnAdd.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(med_form.this, activity_list_med.class);
+                startActivity(i);            }
+        });
     }
 
     @Override
@@ -52,6 +67,7 @@ public class med_form extends AppCompatActivity implements AdapterView.OnItemSel
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
 
 }
 

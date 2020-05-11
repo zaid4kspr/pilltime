@@ -2,7 +2,10 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class list_meas extends AppCompatActivity {
 
@@ -11,4 +14,11 @@ public class list_meas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_meas);
     }
+    public void onClickAddMeas(View v) {
+        Intent i =new Intent(getBaseContext(), meas_select.class);
+        startActivity(i);            }
+
+    public void onClickGoToTemp(View v) {
+        Intent i =new Intent(getBaseContext(), temp.class);
+        startActivity(i);            }
 }

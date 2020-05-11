@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
 //                this.mainFragment.updateDesignWhenUserClickedBottomView(MainFragment.REQUEST_LANDSCAPE);
                     break;
+
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_frame_layout, selectedFragment).commit();
             return true;

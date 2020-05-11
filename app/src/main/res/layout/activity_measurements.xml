@@ -50,9 +50,10 @@
             android:id="@+id/addMeasBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#56b0b6"
-            android:layout_marginTop="150dp"
             android:layout_gravity="center"
+            android:layout_marginTop="150dp"
+            android:backgroundTint="#56b0b6"
+            android:onClick="onClickStartSelectMeas"
             android:text="Add a measurement" />
 
 

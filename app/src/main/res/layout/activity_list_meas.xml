@@ -27,7 +27,9 @@
         <LinearLayout
             android:id="@+id/meas"
             android:layout_marginTop="35dp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <LinearLayout
@@ -46,19 +48,21 @@
                     android:id="@+id/temp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:onClick="onClickGoToTemp"
                     android:text="Temperature"
                     android:textColor="#000"
                     android:textSize="20sp" />
             </LinearLayout>
 
             <Button
-                android:id="@+id/addMeas"
+                android:id="@+id/addNewMeas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
-                android:layout_marginBottom="65dp"
+                android:layout_marginBottom="30dp"
                 android:backgroundTint="#56b0b6"
-                android:text="Add a meas" />
+                android:onClick="onClickAddMeas"
+                android:text="Edit your Measurments" />
 
 
         </LinearLayout>
