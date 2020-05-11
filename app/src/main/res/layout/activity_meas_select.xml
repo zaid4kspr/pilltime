@@ -81,10 +81,11 @@
 
                 <Button
                     android:id="@+id/addmeasBtn"
-                    android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
+                    android:layout_marginTop="20dp"
+                    android:onClick="onClickSelectedMeas"
                     android:text="Save" />
 
             </LinearLayout>

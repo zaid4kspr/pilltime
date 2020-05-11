@@ -115,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right">=
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addCancelTemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
@@ -122,6 +123,7 @@
 
                 </com.google.android.material.button.MaterialButton>
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addSaveTemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Save">

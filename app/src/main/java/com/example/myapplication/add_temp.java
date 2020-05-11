@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.DatePickerDialog;
 import androidx.fragment.app.DialogFragment;
@@ -27,6 +28,9 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
         setContentView(R.layout.activity_add_temp);
         TextView timeClick = (TextView) findViewById(R.id.timeP);
         TextView dateClick = (TextView) findViewById(R.id.date);
+
+
+
         dateClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +46,20 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
                 DialogFragment timePicker = new TimePickerFragment();
                 timePicker.show(getSupportFragmentManager(), "time picker");
             }
+        });
+        Button BtnSave = findViewById(R.id.addSaveTemp);
+        Button BtnCancel = findViewById(R.id.addCancelTemp);
+        BtnSave.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(add_temp.this, temp.class);
+                startActivity(i);            }
+        });
+        BtnCancel.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(add_temp.this, temp.class);
+                startActivity(i);            }
         });
     }
 
