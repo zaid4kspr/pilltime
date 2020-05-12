@@ -10,7 +10,6 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface Api {
-
     @FormUrlEncoded
     @POST("users/register")
     Call<ResponseBody> register(
@@ -18,7 +17,7 @@ public interface Api {
             @Field("password") String password,
             @Field("name") String name,
             @Field("sexe") Integer sexe,
-            @Field("birthdate") String birthdate
+            @Field("birthdate") String birthYear
             );
 
 
@@ -32,6 +31,7 @@ public interface Api {
     @FormUrlEncoded
     @GET("Temperature")
     Call<ResponseBody> geTemperature(
+
     );
 
 

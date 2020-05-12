@@ -2,11 +2,13 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.myapplication.ui.login.LoginActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
 import butterknife.BindView;
@@ -64,13 +66,11 @@ public void register(){
         @Override
         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
-            try{
-             //   String s = response.body().string();
-                Toast.makeText(register.this, "suceesss", Toast.LENGTH_SHORT).show();
+            if(response.isSuccessful()){
+                RouteToLogin();
+                Toast.makeText(register.this, "Resgister with sucess", Toast.LENGTH_SHORT).show();
             }
-            catch (Exception e){
-            e.printStackTrace();
-            }
+
         }
 
         @Override
@@ -81,6 +81,10 @@ public void register(){
 
 }
 
+public void RouteToLogin(){
+    Intent i = new Intent(this, LoginActivity.class);
+    startActivity(i);
+}
 
     public void routeToMain(){
 
