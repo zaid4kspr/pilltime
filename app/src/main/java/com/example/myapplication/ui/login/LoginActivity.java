@@ -41,9 +41,6 @@ public class LoginActivity extends AppCompatActivity {
 
         final Button register = findViewById(R.id.registerNowBtn);
         final Button loginBtn = findViewById(R.id.loginBtn);
-
-
-
         register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
@@ -53,37 +50,25 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-
                 login();
             }
         });
-
     }
-
-
     public void routeToRegister(){
-
         Intent i = new Intent(this, register.class);
         startActivity(i);
-
     }
     public void routeAfterLogin(){
-
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
-
     }
-
-
     public void login(){
+        routeAfterLogin();
         String email = this.email.getEditText().getText().toString();
         String password = this.password.getEditText().getText().toString();
-
-
         Call<ResponseObject> call = RetrofitClient.getInstance().getApi().login(
                 email,
                 password
-
         );
         call.enqueue(new Callback<ResponseObject>() {
             @Override

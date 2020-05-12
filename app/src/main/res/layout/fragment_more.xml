@@ -26,7 +26,7 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconMeasurments"
             android:layout_width="20dp"
-             android:layout_height="20dp"
+            android:layout_height="20dp"
             android:layout_marginTop="2dp"
             android:src="@drawable/icon1" />
 
@@ -36,7 +36,6 @@ tools:context=".more">
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:text="Measurements"
-
             android:textColor="#000"
             android:textSize="17dp" />
         <!--so our layout is set-->
