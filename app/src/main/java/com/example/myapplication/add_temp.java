@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.DatePickerDialog;
 import androidx.fragment.app.DialogFragment;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -105,23 +107,24 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
     public void addTemperature(){
 
      //   String notesTemp = this.notesTemp.getEditText().getText().toString();
-        Float temperature = 38F ;
+        Integer temperature = 40 ;
         String ref_p = "5eb97f0c2cb46e3b6895c672";
         SharedPreferences preferences = getSharedPreferences("myprefs", MODE_PRIVATE);
         String user = preferences.getString("id", "");
+        Toast.makeText(this, "add temp", Toast.LENGTH_SHORT).show();
 
         Call<ResponseBody> call = RetrofitClient.getInstance().getApi().addTemperature(
-                 temperature,
-                "2019-05-15T00:00",
-                ref_p,
-                user
-
+                 40,
+                null,
+                "5eb97f0c2cb46e3b6895c672",
+                "5eb9f271bbee75001725b577"
         );
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-
+                Toast.makeText(add_temp.this, "fama response "+ response.errorBody(), Toast.LENGTH_SHORT).show();
+                Log.d("dd")
                 if(response.isSuccessful()){
                    // RouteToHome();
                     Toast.makeText(add_temp.this, "Resgister with sucess", Toast.LENGTH_SHORT).show();
@@ -131,7 +134,7 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-               // Toast.makeText(register.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+               Toast.makeText(add_temp.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -31,7 +31,7 @@ public interface Api {
     @FormUrlEncoded
     @POST("temperature")
     Call<ResponseBody> addTemperature(
-            @Field("degres") Float degres,
+            @Field("degres") Integer degres,
             @Field("date") String date,
             @Field("ref_p") String ref_p,
             @Field("user") String user
