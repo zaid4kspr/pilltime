@@ -3,6 +3,7 @@ package com.example.myapplication.ui.login;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,8 +29,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
 
-    @BindView(R.id.email) TextInputLayout email ;
-    @BindView(R.id.password) TextInputLayout  password ;
+    @BindView(R.id.email)
+    TextInputLayout email;
+    @BindView(R.id.password)
+    TextInputLayout password;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,8 @@ public class LoginActivity extends AppCompatActivity {
 
         final Button register = findViewById(R.id.registerNowBtn);
         final Button loginBtn = findViewById(R.id.loginBtn);
+
+
         register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
@@ -50,43 +56,64 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
+
                 login();
             }
         });
+
     }
-    public void routeToRegister(){
+
+
+    public void routeToRegister() {
+
         Intent i = new Intent(this, register.class);
         startActivity(i);
+
     }
-    public void routeAfterLogin(){
+
+    public void routeAfterLogin() {
+
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
+
     }
-    public void login(){
+
+
+    public void login() {
         routeAfterLogin();
         String email = this.email.getEditText().getText().toString();
         String password = this.password.getEditText().getText().toString();
+
+        SharedPreferences preferences = getSharedPreferences("myprefs", MODE_PRIVATE);
+
         Call<ResponseObject> call = RetrofitClient.getInstance().getApi().login(
                 email,
                 password
+
         );
         call.enqueue(new Callback<ResponseObject>() {
             @Override
             public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
-                if(response.isSuccessful()){
-                    response.body(); // have your all data
-                    String name =response.body().getUser().getName();
-                    Toast.makeText(LoginActivity.this, "Hello  " + name, Toast.LENGTH_SHORT).show();
+                if (response.isSuccessful()) {
+                    String name = response.body().getUser().getName();
+                    SharedPreferences.Editor editor = preferences.edit();
+
+                    editor.putString("name", name);
+                    editor.putString("id", response.body().getUser().getId());
+
+                    editor.commit();
+
+
+                    //   Toast.makeText(LoginActivity.this, "Hello  " + response.body().getUser().getId(), Toast.LENGTH_SHORT).show();
 
                     routeAfterLogin();
-                }else{
+                } else {
 
-                    Toast.makeText(LoginActivity.this,   "Email / Password incorrect", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Email / Password incorrect", Toast.LENGTH_SHORT).show();
 
                 }
 
             }
-
 
 
             @Override
@@ -96,10 +123,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
     }
-
-
 
 
 }

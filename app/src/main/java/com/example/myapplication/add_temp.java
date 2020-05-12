@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.DatePickerDialog;
 import androidx.fragment.app.DialogFragment;
@@ -68,6 +69,7 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
         BtnSave.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                addTemperature();
                 Intent i =new Intent(add_temp.this, temp.class);
                 startActivity(i);            }
         });
@@ -100,18 +102,20 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
 
 
 
-    public void register(){
+    public void addTemperature(){
 
-        String email = this.notesTemp.getEditText().getText().toString();
-        String password = this.temperature.getEditText().getText().toString();
+     //   String notesTemp = this.notesTemp.getEditText().getText().toString();
+        Float temperature = 38F ;
+        String ref_p = "5eb97f0c2cb46e3b6895c672";
+        SharedPreferences preferences = getSharedPreferences("myprefs", MODE_PRIVATE);
+        String user = preferences.getString("id", "");
 
+        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().addTemperature(
+                 temperature,
+                "2019-05-15T00:00",
+                ref_p,
+                user
 
-        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().register(
-                email,
-                password,
-                name,
-                0,
-                birthYear
         );
 
         call.enqueue(new Callback<ResponseBody>() {
@@ -119,15 +123,15 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
                 if(response.isSuccessful()){
-                    RouteToLogin();
-                    Toast.makeText(register.this, "Resgister with sucess", Toast.LENGTH_SHORT).show();
+                   // RouteToHome();
+                    Toast.makeText(add_temp.this, "Resgister with sucess", Toast.LENGTH_SHORT).show();
                 }
 
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(register.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(register.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

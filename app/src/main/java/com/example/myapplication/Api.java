@@ -18,7 +18,7 @@ public interface Api {
             @Field("name") String name,
             @Field("sexe") Integer sexe,
             @Field("birthdate") String birthYear
-            );
+    );
 
 
     @FormUrlEncoded
@@ -29,11 +29,13 @@ public interface Api {
     );
 
     @FormUrlEncoded
-    @GET("Temperature")
-    Call<ResponseBody> geTemperature(
-
+    @POST("temperature")
+    Call<ResponseBody> addTemperature(
+            @Field("degres") Float degres,
+            @Field("date") String date,
+            @Field("ref_p") String ref_p,
+            @Field("user") String user
     );
-
 
 
 }
