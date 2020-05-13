@@ -1,20 +1,38 @@
 package com.example.myapplication.data.model;
 
-public class TemperatureModel {
+import java.io.Serializable;
+
+public class TemperatureModel implements Serializable {
 
    private  Float degres;
     private  String date;
     private  String ref_p;
     private String user;
     private String note;
-
-
+    private String _id;
     public TemperatureModel(Float degres, String date, String ref_p, String user, String note) {
         this.degres = degres;
         this.date = date;
         this.ref_p = ref_p;
         this.user = user;
         this.note = note;
+    }
+
+    public TemperatureModel(Float degres, String date, String ref_p, String user, String note , String _id) {
+        this.degres = degres;
+        this.date = date;
+        this.ref_p = ref_p;
+        this.user = user;
+        this.note = note;
+        this._id = _id;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getNote() {
