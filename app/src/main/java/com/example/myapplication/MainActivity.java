@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.myapplication.listMeds.listOfMeds;
 import com.example.myapplication.ui.home.HomeFragment;
 import com.example.myapplication.ui.more.MoreFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -43,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    selectedFragment = new HomeCalendarPage();
+                   // selectedFragment = new HomeCalendarPage();
+                   selectedFragment = new listOfMeds();
                     break;
                 case R.id.navigation_add:
                     selectedFragment = new fragment_add_med();

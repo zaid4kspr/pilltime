@@ -37,4 +37,14 @@
     </string-array>
 
 
+    <string-array name="programming_language">
+        <item>js</item>
+        <item>java</item>
+        <item>python</item>
+
+
+    </string-array>
+
+
+
 </resources>
