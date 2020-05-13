@@ -24,6 +24,11 @@
         <item>Twice daily</item>
         <item>3 times a day</item>
     </string-array>
+    <string-array name="Med">
+        <item>Inflamy</item>
+        <item>Doliprane</item>
+        <item>Aspegic</item>
+    </string-array>
     <string-array name="nbr_Take">
         <item>1</item>
         <item>2</item>

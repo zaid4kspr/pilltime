@@ -52,6 +52,9 @@ String id = preferences.getString("id","");
                     break;
                 case R.id.navigation_more:
                     selectedFragment = new more();
+                    break;
+                case R.id.navigation_dashboard:
+                    selectedFragment = new fragment_add_prog();
 
 //                this.mainFragment.updateDesignWhenUserClickedBottomView(MainFragment.REQUEST_LANDSCAPE);
                     break;

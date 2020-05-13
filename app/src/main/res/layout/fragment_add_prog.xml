@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    tools:context=".fragment_add_med">
+
+    <LinearLayout
+        android:id="@+id/addMed1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="54dp"
+        android:background="#00FFFFFF"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageProgramme"
+            android:layout_width="143dp"
+            android:layout_height="149dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/clipboard" />
+
+        <TextView
+            android:id="@+id/textProgram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Manage your programs"
+            android:textColor="#56b0b6"
+            android:textColorLink="#3F51B5"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/textDescProgram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+            android:text="Manage your programs in order to follow the instructions ."
+            android:textStyle="normal" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/AddProgram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="49dp"
+        android:backgroundTint="#56b0b6"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="Add your program"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

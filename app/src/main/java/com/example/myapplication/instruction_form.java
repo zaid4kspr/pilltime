@@ -11,8 +11,10 @@ import androidx.fragment.app.DialogFragment;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,19 +36,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDateSetListener , TimePickerDialog.OnTimeSetListener {
+public class instruction_form extends AppCompatActivity implements DatePickerDialog.OnDateSetListener ,
+        TimePickerDialog.OnTimeSetListener {
 
-    @BindView(R.id.notesTemp) TextInputLayout notesTemp ;
-    @BindView(R.id.temperature) TextInputLayout temperature ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_temp);
+        setContentView(R.layout.activity_instruction_form);
 
 
-        TextView timeClick = (TextView) findViewById(R.id.timeP);
-        TextView dateClick = (TextView) findViewById(R.id.date);
+        TextView timeClick = (TextView) findViewById(R.id.timeInst);
+        TextView dateClick = (TextView) findViewById(R.id.dateInst);
 
 
 
@@ -66,21 +68,29 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
                 timePicker.show(getSupportFragmentManager(), "time picker");
             }
         });
-        Button BtnSave = findViewById(R.id.addSaveTemp);
-        Button BtnCancel = findViewById(R.id.addCancelTemp);
-        BtnSave.setOnClickListener(new View.OnClickListener(){
+        Button BtnSaveInst = findViewById(R.id.addSaveInst);
+        Button BtnCancelInst = findViewById(R.id.addCancelInst);
+        BtnSaveInst.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                addTemperature();
-                Intent i =new Intent(add_temp.this, temp.class);
+                Intent i =new Intent(instruction_form.this, edit_instructions_program.class);
                 startActivity(i);            }
         });
-        BtnCancel.setOnClickListener(new View.OnClickListener(){
+        BtnCancelInst.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent i =new Intent(add_temp.this, temp.class);
+                Intent i =new Intent(instruction_form.this, edit_instructions_program.class);
                 startActivity(i);            }
         });
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinnerMed);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.Med,android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
     }
 
     @Override
@@ -90,53 +100,21 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        TextView textView = (TextView) findViewById(R.id.date);
+        TextView textView = (TextView) findViewById(R.id.dateInst);
         textView.setText(currentDateString);
     }
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        TextView textView = (TextView) findViewById(R.id.timeP);
+        TextView textView = (TextView) findViewById(R.id.timeInst);
         textView.setText( hourOfDay + " : " + minute);
     }
 
 
 
 
-    public void addTemperature(){
 
-     //   String notesTemp = this.notesTemp.getEditText().getText().toString();
-        Integer temperature = 40 ;
-        String ref_p = "5eb97f0c2cb46e3b6895c672";
-        SharedPreferences preferences = getSharedPreferences("myprefs", MODE_PRIVATE);
-        String user = preferences.getString("id", "");
-        Toast.makeText(this, "add temp", Toast.LENGTH_SHORT).show();
 
-        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().addTemperature(
-                 40,
-                null,
-                "5eb97f0c2cb46e3b6895c672",
-                "5eb9f271bbee75001725b577"
-        );
-
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Toast.makeText(add_temp.this, "fama response "+ response.errorBody(), Toast.LENGTH_SHORT).show();
-                if(response.isSuccessful()){
-                   // RouteToHome();
-                    Toast.makeText(add_temp.this, "Resgister with sucess", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-               Toast.makeText(add_temp.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
 
 
 
