@@ -24,28 +24,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_frame_layout, new HomeCalendarPage()).commit();
-        BottomNavigationView bottomNavigationView =findViewById(R.id.activity_main_bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.activity_main_bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-        SharedPreferences preferences =getSharedPreferences("myprefs",MODE_PRIVATE) ;
+        SharedPreferences preferences = getSharedPreferences("myprefs", MODE_PRIVATE);
 
 
-String id = preferences.getString("id","");
-        Toast.makeText(this,"FROM MAIN"+ id, Toast.LENGTH_SHORT).show();
-
+        String id = preferences.getString("id", "");
+        Toast.makeText(this, "FROM MAIN" + id, Toast.LENGTH_SHORT).show();
 
 
     }
-    
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
-            case R.id.navigation_home:
-                selectedFragment = new HomeCalendarPage();
-                break;
+                case R.id.navigation_home:
+                    selectedFragment = new HomeCalendarPage();
+                    break;
                 case R.id.navigation_add:
                     selectedFragment = new fragment_add_med();
 //                this.mainFragment.updateDesignWhenUserClickedBottomView(MainFragment.REQUEST_LOGO);

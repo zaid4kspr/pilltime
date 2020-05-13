@@ -1,12 +1,15 @@
 package com.example.myapplication;
 
 import com.example.myapplication.data.model.ResponseObject;
+import com.example.myapplication.data.model.TemperatureModel;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface Api {
@@ -17,7 +20,7 @@ public interface Api {
             @Field("password") String password,
             @Field("name") String name,
             @Field("sexe") Integer sexe,
-            @Field("birthdate") String birthYear
+            @Field("birthYear") String birthYear
     );
 
 
@@ -28,14 +31,10 @@ public interface Api {
             @Field("password") String password
     );
 
-    @FormUrlEncoded
     @POST("temperature")
     Call<ResponseBody> addTemperature(
-            @Field("degres") Integer degres,
-            @Field("date") String date,
-            @Field("ref_p") String ref_p,
-            @Field("user") String user
-    );
+            @Body TemperatureModel t
+            );
 
 
 }
