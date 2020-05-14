@@ -24,13 +24,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_frame_layout, new HomeCalendarPage()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_frame_layout, new listOfMeds()).commit();
         BottomNavigationView bottomNavigationView = findViewById(R.id.activity_main_bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
         SharedPreferences preferences = getSharedPreferences("myprefs", MODE_PRIVATE);
-
-
         String id = preferences.getString("id", "");
         Toast.makeText(this, "FROM MAIN" + id, Toast.LENGTH_SHORT).show();
 

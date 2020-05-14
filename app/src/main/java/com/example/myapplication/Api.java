@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import com.example.myapplication.data.model.PriseModel;
 import com.example.myapplication.data.model.ResponseObject;
 import com.example.myapplication.data.model.TemperatureModel;
 
@@ -14,7 +15,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
-
+import retrofit2.http.Query;
 
 
 public interface Api {
@@ -43,6 +44,14 @@ public interface Api {
 
     @GET("temperature")
     Call<ArrayList<TemperatureModel>> getAllTemperature();
+
+    @GET("prise")
+    Call<ArrayList<PriseModel>> getPrise(
+            @Query("query") String query,
+            @Query("populate") String populate
+
+
+    );
 
 
 

@@ -10,20 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.data.model.PriseModel;
 
 import java.util.ArrayList;
 
 public class listMedsAdapter extends RecyclerView.Adapter<listMedsAdapter.MyViewHolder> {
 
-    ArrayList<String> data1 = new ArrayList<String>();
-    ArrayList<String> data2 = new ArrayList<String>();
+
+    ArrayList<PriseModel> priseList = new ArrayList<PriseModel>();
     Context context;
 
-    public listMedsAdapter(Context ct, ArrayList<String> s1, ArrayList<String> s2) {
+    public listMedsAdapter(Context ct, ArrayList<PriseModel> p) {
 
         context = ct;
-        data1 = s1;
-        data2 = s2;
+        priseList = p;
 
     }
 
@@ -33,29 +33,30 @@ public class listMedsAdapter extends RecyclerView.Adapter<listMedsAdapter.MyView
 
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.med_item, parent, false);
-
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.myText1.setText(data1.get(position));
-        holder.myText2.setText(data2.get(position));
+        holder.name.setText(priseList.get(position).getRefMed().getName());
+        holder.desc.setText("Take "+priseList.get(position).getQte()+" application(s)");
+        holder.heure.setText(priseList.get(position).getHeure());
     }
 
     @Override
     public int getItemCount() {
-        return data1.size();
+        return priseList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView myText1, myText2;
+        TextView name, desc,heure;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            myText1 = itemView.findViewById(R.id.medicationName);
-            myText2 = itemView.findViewById(R.id.medicationDesc);
+            name = itemView.findViewById(R.id.medicationName);
+            desc = itemView.findViewById(R.id.medicationDesc);
+            heure = itemView.findViewById(R.id.heure);
 
 
         }
