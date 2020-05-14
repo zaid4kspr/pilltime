@@ -3,7 +3,6 @@ package com.example.myapplication.data.model;
 import java.io.Serializable;
 
 public class TemperatureModel implements Serializable {
-
    private  Float degres;
     private  String date;
     private  String ref_p;

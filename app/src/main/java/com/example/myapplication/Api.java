@@ -3,6 +3,9 @@ package com.example.myapplication;
 import com.example.myapplication.data.model.ResponseObject;
 import com.example.myapplication.data.model.TemperatureModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -11,6 +14,8 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+
+
 
 public interface Api {
     @FormUrlEncoded
@@ -35,6 +40,11 @@ public interface Api {
     Call<ResponseBody> addTemperature(
             @Body TemperatureModel t
             );
+
+    @GET("temperature")
+    Call<ArrayList<TemperatureModel>> getAllTemperature();
+
+
 
 
 }
