@@ -1,8 +1,6 @@
-package com.example.myapplication.listMeds;
+package com.example.myapplication.listOfPriseHomePage;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,22 +11,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.RetrofitClient;
-import com.example.myapplication.data.model.MedicamentModel;
 import com.example.myapplication.data.model.PriseModel;
-import com.example.myapplication.data.model.TemperatureModel;
-import com.example.myapplication.temp;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,7 +31,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class listOfMeds extends Fragment {
+public class listOfPriseHomePage extends Fragment {
 
     @BindView(R.id.listMeds)
     RecyclerView listMedsRview;

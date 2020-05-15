@@ -9,12 +9,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.myapplication.listMeds.listOfMeds;
-import com.example.myapplication.ui.home.HomeFragment;
-import com.example.myapplication.ui.more.MoreFragment;
+import com.example.myapplication.listOfPriseHomePage.listOfPriseHomePage;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import butterknife.BindView;
 
 public class MainActivity extends AppCompatActivity {
     //1 - FOR DESIGN
@@ -24,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_frame_layout, new listOfMeds()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_frame_layout, new listOfPriseHomePage()).commit();
         BottomNavigationView bottomNavigationView = findViewById(R.id.activity_main_bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
@@ -43,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                    // selectedFragment = new HomeCalendarPage();
-                   selectedFragment = new listOfMeds();
+                   selectedFragment = new listOfPriseHomePage();
                     break;
                 case R.id.navigation_add:
                     selectedFragment = new fragment_add_med();

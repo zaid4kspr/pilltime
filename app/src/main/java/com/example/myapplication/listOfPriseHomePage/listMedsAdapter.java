@@ -1,4 +1,4 @@
-package com.example.myapplication.listMeds;
+package com.example.myapplication.listOfPriseHomePage;
 
 import android.content.Context;
 import android.view.LayoutInflater;
