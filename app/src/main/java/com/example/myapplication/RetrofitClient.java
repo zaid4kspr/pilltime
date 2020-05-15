@@ -38,9 +38,7 @@ public static synchronized  RetrofitClient getInstance(){
 }
 
 public Api getApi(){
-
     return retrofit.create(Api.class);
-
 }
 
 

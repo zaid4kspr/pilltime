@@ -9,6 +9,7 @@ public class TemperatureModel implements Serializable {
     private String user;
     private String note;
     private String _id;
+
     public TemperatureModel(Float degres, String date, String ref_p, String user, String note) {
         this.degres = degres;
         this.date = date;
