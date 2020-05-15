@@ -37,6 +37,7 @@ public class temp extends AppCompatActivity {
         List yAxisValues = new ArrayList();
         List axisValues = new ArrayList();
         getAllTemperature(yAxisValues,axisValues);
+
         List lines = new ArrayList();
         Line line = new Line(yAxisValues).setColor(Color.parseColor("#003366"));
         lines.add(line);

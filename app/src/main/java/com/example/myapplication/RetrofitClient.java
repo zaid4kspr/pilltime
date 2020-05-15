@@ -10,7 +10,6 @@ private static  final String BASE_URL="https://pill-time.herokuapp.com/api/";
 private static  RetrofitClient mInstance;
 private Retrofit retrofit;
 
-
 private RetrofitClient(){
 //    retrofit= new Retrofit.Builder().baseUrl().addConverterFactory(GsonConverterFactory.create()).build();
     HttpLoggingInterceptor logging = new HttpLoggingInterceptor();

@@ -30,7 +30,9 @@
                     android:layout_width="40dp"
                     android:layout_height="60dp"
                     android:layout_weight="2"
-                    android:src="@drawable/maladie"></ImageView>
+                    android:src="@drawable/maladie"
+                    android:paddingRight="5dp"
+                    android:layout_gravity="right"></ImageView>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -45,34 +47,9 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:inputType="number" />
+                        android:inputType="text" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:weightSum="12"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_weight="2"
-                    android:layout_width="20dp"
-                    android:layout_height="35dp"
-                    android:src="@drawable/clock"></ImageView>
-
-                <TextView
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="8"
-                    android:id="@+id/dateProgram"
-                    android:textSize="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Date début"></TextView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -86,7 +63,7 @@
                     android:layout_weight="2"
                     android:src="@drawable/duree"></ImageView>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/notesTemp"
+                    android:id="@+id/addDayss"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -99,9 +76,52 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:id="@+id/plus"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:weightSum="12">
+                <ImageView
+                    android:layout_weight="2"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/clock"
+                    ></ImageView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="10"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:id="@+id/dateProgramDebut"
+                    android:text="Date Début"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:id="@+id/dateProgramFin"
+                    android:text="Date Fin"
+                    ></TextView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"

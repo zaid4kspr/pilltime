@@ -28,7 +28,6 @@ public interface Api {
             @Field("birthYear") String birthYear
     );
 
-
     @FormUrlEncoded
     @POST("users/login")
     Call<ResponseObject> login(

@@ -9,24 +9,34 @@ import android.os.Bundle;
 import android.app.DatePickerDialog;
 import androidx.fragment.app.DialogFragment;
 
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.myapplication.data.model.ResponseObject;
 import com.example.myapplication.ui.DatePickerFragment;
 import com.example.myapplication.ui.TimePickerFragment;
 import com.example.myapplication.ui.login.LoginActivity;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.w3c.dom.Text;
 
 import java.text.DateFormat;
+import java.text.ParseException;
+
 import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import java.util.Date;
+
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import okhttp3.ResponseBody;
@@ -34,7 +44,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class prog_form extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class prog_form extends AppCompatActivity implements DatePickerDialog.OnDateSetListener   {
 
 
 
@@ -44,8 +54,7 @@ public class prog_form extends AppCompatActivity implements DatePickerDialog.OnD
         setContentView(R.layout.activity_prog_form);
 
 
-        TextView dateClick = (TextView)findViewById(R.id.dateProgram);
-
+        TextView dateClick = (TextView)findViewById(R.id.dateProgramDebut);
         dateClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +64,7 @@ public class prog_form extends AppCompatActivity implements DatePickerDialog.OnD
 
             }
         });
+
         Button BtnSaveProg = findViewById(R.id.addSaveProg);
         Button BtnCancelProg = findViewById(R.id.addCancelProg);
         BtnSaveProg.setOnClickListener(new View.OnClickListener(){
@@ -72,14 +82,31 @@ public class prog_form extends AppCompatActivity implements DatePickerDialog.OnD
     }
 
     @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)  {
         Calendar c = Calendar.getInstance();
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        TextView textView = (TextView) findViewById(R.id.dateProgram);
+
+
+
+        TextInputLayout plusDays =findViewById(R.id.addDayss);
+
+
+        c.add(c.DATE,Integer.parseInt(plusDays.getEditText().getText().toString()));
+
+        TextView textView = (TextView) findViewById(R.id.dateProgramDebut);
         textView.setText(currentDateString);
+        String currentDateStringF = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+        TextView textViewf = (TextView) findViewById(R.id.dateProgramFin);
+        textViewf.setText(currentDateStringF);
+
+
+
+
     }
 
 
@@ -91,5 +118,5 @@ public class prog_form extends AppCompatActivity implements DatePickerDialog.OnD
 
 
 
-}
 
+}
