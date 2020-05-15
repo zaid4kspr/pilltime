@@ -19,8 +19,9 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="20dp">
+
             <LinearLayout
-                android:id="@+id/TempEdit"
+                android:id="@+id/duree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -51,6 +52,7 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -84,27 +86,28 @@
 
 
             <LinearLayout
+                android:id="@+id/debbbb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:weightSum="12">
+
                 <ImageView
-                    android:layout_weight="2"
                     android:layout_width="40dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/clock"
-                    ></ImageView>
+                    android:layout_weight="2"
+                    android:src="@drawable/clock"></ImageView>
 
                 <TextView
+                    android:id="@+id/dateProgramDebut"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="10"
+                    android:text="Date Début"
                     android:textColor="#000"
-                    android:textSize="20sp"
-                    android:id="@+id/dateProgramDebut"
-                    android:text="Date Début"></TextView>
+                    android:textSize="20sp"></TextView>
             </LinearLayout>
 
             <LinearLayout

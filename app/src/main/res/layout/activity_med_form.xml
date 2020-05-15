@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".med_form">
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="0dp"
@@ -37,66 +38,131 @@
                 android:layout_height="wrap_content"
                 android:hint="Medication Name">
 
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/dateDebutLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="10"
+                android:orientation="horizontal"
+                android:padding="0dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dateDebut"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+
+                    android:hint="Date debut"
+                    android:textColor="#000"
+                    android:textSize="20sp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/dateDebutInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+
+                        android:inputType="date" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/duree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="0dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/temperature"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:hint="Durée"
+                    android:textColor="#000"
+                    android:textSize="20sp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="number|text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
+
                 <TextView
-                    android:id="@+id/ReminderTimes"
+                    android:id="@+id/Programme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Reminder Times"
-                    android:textSize="22dp"
-                    android:textStyle="bold"/>
+                    android:text="Programme"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
                 <Spinner
                     android:id="@+id/spinner"
-                    android:layout_marginTop="10dp"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
 
                 <LinearLayout
                     android:id="@+id/dialTake"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="4"
                     android:layout_marginTop="15sp"
-                    >
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="4">
 
                     <TextView
                         android:id="@+id/timeTake"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="08:00"
-                        android:textSize="20sp"
-                        android:layout_weight="1"></TextView>
+                        android:textSize="20sp"></TextView>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"></TextView>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"></TextView>
+
                     <TextView
                         android:id="@+id/nbTake"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Take 1"
-                        android:textSize="20sp"
-                        android:layout_weight="1"></TextView>
+                        android:textSize="20sp"></TextView>
 
                 </LinearLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
