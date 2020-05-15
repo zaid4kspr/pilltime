@@ -25,9 +25,23 @@ public class ProgrammeModel {
     @SerializedName("createdAt")
     @Expose
     private String createdAt;
+
     @SerializedName("updatedAt")
     @Expose
     private String updatedAt;
+
+    @SerializedName("user")
+    @Expose
+    private String user;
+
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 
     public String getId() {
         return id;
@@ -85,4 +99,20 @@ public class ProgrammeModel {
         this.updatedAt = updatedAt;
     }
 
+
+    public ProgrammeModel(String id, String dateDebut, String dateFin, Integer duree, String maladie, String user) {
+        this.id = id;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.duree = duree;
+        this.maladie = maladie;
+        this.user = user;
+    }
+    public ProgrammeModel( String dateDebut, String dateFin, Integer duree, String maladie, String user) {
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.duree = duree;
+        this.maladie = maladie;
+        this.user = user;
+    }
 }

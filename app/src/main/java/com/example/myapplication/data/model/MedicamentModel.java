@@ -93,6 +93,14 @@ import com.google.gson.annotations.SerializedName;
             this.user = user;
             this.programme = programme;
         }
+        public MedicamentModel( String dateDebut, String dateFin, String name, Integer duree, String user, String programme) {
+            this.dateDebut = dateDebut;
+            this.dateFin = dateFin;
+            this.name = name;
+            this.duree = duree;
+            this.user = user;
+            this.programme = programme;
+        }
     }
 
 

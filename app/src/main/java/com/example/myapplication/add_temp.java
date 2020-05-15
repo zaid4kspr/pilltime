@@ -10,7 +10,6 @@ import android.app.DatePickerDialog;
 
 import androidx.fragment.app.DialogFragment;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -18,14 +17,10 @@ import android.widget.TimePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication.data.model.ResponseObject;
 import com.example.myapplication.data.model.TemperatureModel;
 import com.example.myapplication.ui.DatePickerFragment;
 import com.example.myapplication.ui.TimePickerFragment;
-import com.example.myapplication.ui.login.LoginActivity;
 import com.google.android.material.textfield.TextInputLayout;
-
-import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -41,7 +36,7 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
 
     @BindView(R.id.notesTemp)
     TextInputLayout notesTemp;
-    @BindView(R.id.temperature) TextInputLayout temperature;
+    @BindView(R.id.duree_med_form) TextInputLayout temperature;
     String date;
     String time;
     @Override

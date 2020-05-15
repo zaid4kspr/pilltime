@@ -98,7 +98,6 @@ public class listOfPriseHomePage extends Fragment {
         Calendar c = Calendar.getInstance();
         c.setTime(date1);
 
-
         String dateDebut = dateFormat.format(date1);
         c.add(Calendar.DATE, 1);
 

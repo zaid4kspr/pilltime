@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import com.example.myapplication.data.model.MedicamentModel;
 import com.example.myapplication.data.model.PriseModel;
+import com.example.myapplication.data.model.ProgrammeModel;
 import com.example.myapplication.data.model.ResponseObject;
 import com.example.myapplication.data.model.TemperatureModel;
 
@@ -41,6 +43,9 @@ public interface Api {
             @Body TemperatureModel t
             );
 
+
+
+
     @GET("temperature")
     Call<ArrayList<TemperatureModel>> getAllTemperature();
 
@@ -48,10 +53,22 @@ public interface Api {
     Call<ArrayList<PriseModel>> getPrise(
             @Query("query") String query,
             @Query("populate") String populate
-
-
     );
 
+    @GET("programme")
+    Call<ArrayList<ProgrammeModel>> getProgramme(
+            @Query("query") String query
+    );
+
+    @POST("programme")
+    Call<ResponseBody> addProgramme(@Body ProgrammeModel p);
+  @POST("medicament")
+    Call<ResponseBody> addMeds(
+            @Body MedicamentModel m
+    );
+
+  @GET("medicament/count")
+    Call<ResponseBody> countMeds();
 
 
 

@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences preferences = getSharedPreferences("myprefs", MODE_PRIVATE);
         String id = preferences.getString("id", "");
-        Toast.makeText(this, "FROM MAIN" + id, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, "FROM MAIN" + id, Toast.LENGTH_SHORT).show();
 
 
     }
@@ -42,7 +42,11 @@ public class MainActivity extends AppCompatActivity {
                    selectedFragment = new listOfPriseHomePage();
                     break;
                 case R.id.navigation_add:
-                    selectedFragment = new fragment_add_med();
+                    if(countMyMeds()==0){
+                        selectedFragment = new fragment_add_med();
+                    }else{
+                        selectedFragment = new more();
+                    }
 //                this.mainFragment.updateDesignWhenUserClickedBottomView(MainFragment.REQUEST_LOGO);
                     break;
                 case R.id.navigation_more:
@@ -60,6 +64,26 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
+
+
+
+
+
+
+    int countMyMeds(){
+
+        return 0;
+
+    }
+
+
+
+
+
+
+
+
 
 }
 
