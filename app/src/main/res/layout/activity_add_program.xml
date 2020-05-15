@@ -28,27 +28,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-
+            android:id="@+id/listProg"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/prog1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
 
-                android:onClick="onClickVisitProg"
-                android:text="Program 1 : nom maladie"
-                android:textSize="16dp"></TextView>
-
-            <TextView
-                android:id="@+id/prog2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:onClick="onClickVisitProg"
-                android:text="Program 2 : nom maladie"
-                android:textSize="16dp"></TextView>
 
         </LinearLayout>
 

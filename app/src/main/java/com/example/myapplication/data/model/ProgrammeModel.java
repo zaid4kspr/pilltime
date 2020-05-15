@@ -29,6 +29,18 @@ public class ProgrammeModel {
     @Expose
     private String updatedAt;
 
+    private String user;
+
+
+    public ProgrammeModel(String dateDebut, String dateFin, Integer duree, String maladie,String user) {
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.duree = duree;
+        this.maladie = maladie;
+        this.user = user ;
+
+    }
+
     public String getId() {
         return id;
     }
@@ -85,4 +97,11 @@ public class ProgrammeModel {
         this.updatedAt = updatedAt;
     }
 
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 }

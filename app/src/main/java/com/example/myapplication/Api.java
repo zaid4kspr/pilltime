@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import com.example.myapplication.data.model.PriseModel;
+import com.example.myapplication.data.model.ProgrammeModel;
 import com.example.myapplication.data.model.ResponseObject;
 import com.example.myapplication.data.model.TemperatureModel;
 
@@ -51,6 +52,14 @@ public interface Api {
 
 
     );
+    @POST("programme")
+    Call<ResponseBody> addProgramme(
+            @Body ProgrammeModel p
+    );
+
+
+    @GET("programme")
+    Call<ArrayList<ProgrammeModel>> getAllProgramme();
 
 
 
