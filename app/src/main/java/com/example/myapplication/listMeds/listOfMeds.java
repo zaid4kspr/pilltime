@@ -22,10 +22,12 @@ import com.example.myapplication.data.model.PriseModel;
 import com.example.myapplication.data.model.TemperatureModel;
 import com.example.myapplication.temp;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -43,8 +45,6 @@ public class listOfMeds extends Fragment {
     RecyclerView listMedsRview;
 
     ArrayList<PriseModel> priseList = new ArrayList<PriseModel>();
-
-
 
 
     @Override
@@ -75,13 +75,18 @@ public class listOfMeds extends Fragment {
         horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
             @Override
             public void onDateSelected(Calendar date, int position) {
+
                 Calendar cal = horizontalCalendar.getDateAt(position);
                 SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
                 String now = format1.format(cal.getTime());
-                cal.add(Calendar.DATE,1);
+                cal.add(Calendar.DATE, 1);
                 String tomorrow = format1.format(cal.getTime());
 
-                Toast.makeText(getContext(), ""+now+"---"+tomorrow, Toast.LENGTH_SHORT).show();
+
+                String userQueryparam = "{\"user\":\"" + userId + "\", " + "\"date\" : {\"$gt\": \"" + now + "\" ,\"$lt\": \"" + tomorrow + "\"}}";
+
+                getListOfMeds(userQueryparam);
+
             }
 
 
@@ -89,25 +94,38 @@ public class listOfMeds extends Fragment {
             public boolean onDateLongClicked(Calendar date, int position) {
                 return true;
             }
-            
+
         });
 
-//        MedicamentModel m = new MedicamentModel("aa",  "54",  "aaa",  "aa", 55, "a", "a");
-//
-//        PriseModel p1 = new PriseModel("zaaz", "2020-05-18T08:00:00", "08:00 AM", 2, m, "");
-//        PriseModel p2 = new PriseModel("zaaz", "2020-05-18T08:00:00", "12:00 AM", 1, m, "");
-//        PriseModel p3 = new PriseModel("zaaz", "2020-05-18T08:00:00", "21:00 AM", 1, m, "");
-//
-//        priseList.add(p1);
-//        priseList.add(p2);
-//        priseList.add(p3);
-// https://pill-time.herokuapp.com/api/prise?query={ "date" : {"$gt": "2020-05-14" ,"$lt": "2020-05-15"}}
-      // String userQueryparam="{\"user\":\""+userId+"\",\"date\":{\"2020-05-18T08:00\"}}";
-       String userQueryparam="{\"user\":\"\"+userId+\"\", " +
-               "\"date\" : {\"$gt\": \"2020-05-14\" ,\"$lt\": \"2020-05-15\"}}";
 
 
-       String DateQuery="{\"date\":{\"2020-05-18T08:00\"}}";
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date date1 = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(date1);
+
+
+        String dateDebut = dateFormat.format(date1);
+        c.add(Calendar.DATE, 1);
+
+
+        String dateFin = dateFormat.format(c.getTime());
+
+
+        String userQueryparam = "{\"user\":\"" + userId + "\", " + "\"date\" : {\"$gt\": \"" + dateDebut + "\" ,\"$lt\": \"" + dateFin + "\"}}";
+        Log.d("zzzz", userQueryparam);
+
+        getListOfMeds(userQueryparam);
+
+        return view;
+    }
+
+
+    public void getListOfMeds(String userQueryparam) {
+
+
         Call<ArrayList<PriseModel>> call = RetrofitClient.getInstance().getApi().getPrise(
 
                 userQueryparam,
@@ -126,11 +144,11 @@ public class listOfMeds extends Fragment {
                     listMedsAdapter myAdapter = new listMedsAdapter(getContext(), priseList);
                     listMedsRview.setAdapter(myAdapter);
                     listMedsRview.setLayoutManager(new LinearLayoutManager(getContext()));
-                    Toast.makeText(getContext(), "SUCCESS", Toast.LENGTH_SHORT).show();
 
                 } else {
                 }
             }
+
             @Override
             public void onFailure(Call<ArrayList<PriseModel>> call, Throwable t) {
                 System.out.println("Something went wrong!");
@@ -138,19 +156,6 @@ public class listOfMeds extends Fragment {
             }
         });
 
-
-
-
-
-
-
-
-
-        return view;
-    }
-
-
-    public void getListOfMeds() {
 
     }
 
