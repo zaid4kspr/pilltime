@@ -1,4 +1,4 @@
-package com.example.myapplication.listOfProgramms;
+package com.example.myapplication.listOfTemp;
 
 import android.content.Context;
 import android.util.Log;
@@ -6,23 +6,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import  android.graphics.Color;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.data.model.ProgrammeModel;
+import com.example.myapplication.data.model.TemperatureModel;
 
 import java.util.ArrayList;
 
-public class listProgAdapter extends RecyclerView.Adapter<listProgAdapter.MyViewHolder> {
+public class listTempAdapter extends RecyclerView.Adapter<listTempAdapter.MyViewHolder> {
 
-    ArrayList<ProgrammeModel> programmeList = new ArrayList<ProgrammeModel>();
+    ArrayList<TemperatureModel> temperatureList = new ArrayList<TemperatureModel>();
     Context context;
-    public listProgAdapter(Context ct, ArrayList<ProgrammeModel> p) {
+    public listTempAdapter(Context ct, ArrayList<TemperatureModel> t) {
 
         context = ct;
-        programmeList = p;
+        temperatureList = t;
 
     }
 
@@ -31,16 +32,19 @@ public class listProgAdapter extends RecyclerView.Adapter<listProgAdapter.MyView
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.prog_item, parent, false);
+        View view = inflater.inflate(R.layout.temp_item, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.maladie.setText(programmeList.get(position).getMaladie());
-        holder.desc.setText(programmeList.get(position).getDuree()+" jours restants");
-       // Log.d("maladiet", programmeList.get(position).getMaladie());
-      //  Log.d("maladietd", String.valueOf(programmeList.get(position).getDuree()));
+
+        holder.maladie.setText(Float.toString(temperatureList.get(position).getDegres()));
+        if (temperatureList.get(position).getDegres()>40) {
+            holder.maladie.setTextColor(Color.rgb(255, 71, 26));
+        }
+        holder.desc.setText(temperatureList.get(position).getDate());
+
 
 
 
@@ -48,7 +52,7 @@ public class listProgAdapter extends RecyclerView.Adapter<listProgAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return programmeList.size();
+        return temperatureList.size();
     }
 
 
@@ -58,8 +62,8 @@ public class listProgAdapter extends RecyclerView.Adapter<listProgAdapter.MyView
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            maladie = itemView.findViewById(R.id.maladieName);
-            desc = itemView.findViewById(R.id.progRest);
+            maladie = itemView.findViewById(R.id.tempDEG);
+            desc = itemView.findViewById(R.id.tempDATE);
 
 
         }

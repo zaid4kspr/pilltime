@@ -28,14 +28,14 @@ tools:context=".more">
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginTop="2dp"
-            android:src="@drawable/icon1" />
+            android:src="@drawable/temper" />
 
         <TextView
             android:id="@+id/textMeasurements"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:text="Measurements"
+            android:text="Temperature measurements"
             android:textColor="#000"
             android:textSize="17dp" />
         <!--so our layout is set-->
