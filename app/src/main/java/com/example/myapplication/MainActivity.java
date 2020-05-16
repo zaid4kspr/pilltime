@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.myapplication.listOfPriseHomePage.listOfPriseHomePage;
+import com.example.myapplication.listOfProgramms.listOfPrograms;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences preferences = getSharedPreferences("myprefs", MODE_PRIVATE);
         String id = preferences.getString("id", "");
-        Toast.makeText(this, "FROM MAIN" + id, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, "FROM MAIN" + id, Toast.LENGTH_SHORT).show();
 
 
     }
@@ -42,14 +43,22 @@ public class MainActivity extends AppCompatActivity {
                    selectedFragment = new listOfPriseHomePage();
                     break;
                 case R.id.navigation_add:
-                    selectedFragment = new fragment_add_med();
+                    if(countMyMeds()==0){
+                        selectedFragment = new fragment_add_med();
+                    }else{
+                        selectedFragment = new more();
+                    }
 //                this.mainFragment.updateDesignWhenUserClickedBottomView(MainFragment.REQUEST_LOGO);
                     break;
                 case R.id.navigation_more:
                     selectedFragment = new more();
                     break;
                 case R.id.navigation_dashboard:
-                    selectedFragment = new fragment_add_prog();
+                    if(CountProgramms()==0){
+                        selectedFragment = new fragment_add_prog();
+                    }else{
+                        selectedFragment = new listOfPrograms();
+                    }
 
 //                this.mainFragment.updateDesignWhenUserClickedBottomView(MainFragment.REQUEST_LANDSCAPE);
                     break;
@@ -60,6 +69,30 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
+
+
+
+
+
+
+    int countMyMeds(){
+
+        return 0;
+
+    }
+
+
+    int CountProgramms(){
+
+        return 120;
+
+    }
+
+
+
+
+
 
 }
 

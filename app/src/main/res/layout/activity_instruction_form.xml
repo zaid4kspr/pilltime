@@ -38,7 +38,7 @@
                     android:layout_weight="10"
                     android:textColor="#000"
                     android:textSize="20sp"
-                    android:id="@+id/temperature"
+                    android:id="@+id/duree_med_form"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:hint="Select your med">
 
