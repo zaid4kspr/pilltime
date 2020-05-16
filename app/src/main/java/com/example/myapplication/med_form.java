@@ -56,7 +56,7 @@ public class med_form extends AppCompatActivity implements DatePickerDialog.OnDa
     @BindView(R.id.duree_med_form)
     TextInputLayout duree_med_form;
     Date dateDebutJava;
-String programme;
+    String programme;
     Spinner spinner;
     String userId;
     ArrayAdapter<String> adapter;
@@ -122,9 +122,7 @@ String programme;
         DialogFragment datePicker = new DatePickerFragment();
         datePicker.show(getSupportFragmentManager(), "date pickerr");
 
-
     }
-
 
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id) {
@@ -175,7 +173,7 @@ String programme;
                 if (response.isSuccessful()) {
 
                     System.out.println(response.code());
-                   programmeList = response.body();
+                    programmeList = response.body();
                     if(programmeList.size()==0){
                         routeToCreateProgram();
                     }
@@ -205,7 +203,7 @@ String programme;
 
     }
 
-   public void fillSpinnerItems(){
+    public void fillSpinnerItems(){
         spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
 

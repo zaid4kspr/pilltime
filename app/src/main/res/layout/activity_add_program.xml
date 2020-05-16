@@ -28,27 +28,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-
+            android:id="@+id/listProg"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/prog1"
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_height="match_parent"
+                android:id="@+id/recycleviewProg">
 
-                android:onClick="onClickVisitProg"
-                android:text="Program 1 : nom maladie"
-                android:textSize="16dp"></TextView>
+            </androidx.recyclerview.widget.RecyclerView>
 
-            <TextView
-                android:id="@+id/prog2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:onClick="onClickVisitProg"
-                android:text="Program 2 : nom maladie"
-                android:textSize="16dp"></TextView>
+
 
         </LinearLayout>
 

@@ -61,7 +61,6 @@ public class temp extends AppCompatActivity {
 
         //});
 
-
     }
 
 
@@ -69,7 +68,6 @@ public class temp extends AppCompatActivity {
         Intent i =new Intent(getBaseContext(), add_temp.class);
         startActivity(i);
     }
-
     public void getAllTemperature(List X,List Y) {
         Call<ArrayList<TemperatureModel>> call = RetrofitClient.getInstance().getApi().getAllTemperature();
         call.enqueue(new Callback<ArrayList<TemperatureModel>>() {

@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.myapplication.listOfMedication.listOfMedicationPage.listOfMyMeds;
 import com.example.myapplication.listOfPriseHomePage.listOfPriseHomePage;
+import com.example.myapplication.listOfProgramms.listOfPrograms;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -54,7 +55,11 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = new more();
                     break;
                 case R.id.navigation_dashboard:
-                    selectedFragment = new fragment_add_prog();
+                    if(CountProgramms()==0){
+                        selectedFragment = new fragment_add_prog();
+                    }else{
+                        selectedFragment = new listOfPrograms();
+                    }
 
 //                this.mainFragment.updateDesignWhenUserClickedBottomView(MainFragment.REQUEST_LANDSCAPE);
                     break;
@@ -79,7 +84,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    int CountProgramms(){
 
+        return 120;
+
+    }
 
 
 

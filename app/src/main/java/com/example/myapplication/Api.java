@@ -66,12 +66,19 @@ public interface Api {
             @Query("query") String query
     );
 
-    @POST("programme")
-    Call<ResponseBody> addProgramme(@Body ProgrammeModel p);
+
   @POST("medicament")
     Call<ResponseBody> addMeds(
             @Body MedicamentModel m
     );
+    @POST("programme")
+    Call<ResponseBody> addProgramme(
+            @Body ProgrammeModel p
+    );
+
+
+    @GET("programme")
+    Call<ArrayList<ProgrammeModel>> getAllProgramme();
 
   @GET("medicament/count")
     Call<ResponseBody> countMeds();
