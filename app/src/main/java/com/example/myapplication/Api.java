@@ -55,6 +55,12 @@ public interface Api {
             @Query("populate") String populate
     );
 
+    @GET("medicament")
+    Call<ArrayList<MedicamentModel>> getMyMedsLotf3leya(
+            @Query("query") String query
+
+    );
+
     @GET("programme")
     Call<ArrayList<ProgrammeModel>> getProgramme(
             @Query("query") String query

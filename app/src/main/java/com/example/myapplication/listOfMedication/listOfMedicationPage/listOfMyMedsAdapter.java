@@ -1,4 +1,4 @@
-package com.example.myapplication.listOfPriseHomePage;
+package com.example.myapplication.listOfMedication.listOfMedicationPage;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,20 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.data.model.MedicamentModel;
 import com.example.myapplication.data.model.PriseModel;
 
 import java.util.ArrayList;
 
-public class listMedsAdapter extends RecyclerView.Adapter<listMedsAdapter.MyViewHolder> {
+public class listOfMyMedsAdapter extends RecyclerView.Adapter<listOfMyMedsAdapter.MyViewHolder> {
 
 
-    ArrayList<PriseModel> priseList = new ArrayList<PriseModel>();
+    ArrayList<MedicamentModel> medsList = new ArrayList<MedicamentModel>();
     Context context;
 
-    public listMedsAdapter(Context ct, ArrayList<PriseModel> p) {
+    public listOfMyMedsAdapter(Context ct, ArrayList<MedicamentModel> p) {
 
         context = ct;
-        priseList = p;
+        medsList = p;
 
     }
 
@@ -32,20 +33,19 @@ public class listMedsAdapter extends RecyclerView.Adapter<listMedsAdapter.MyView
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.prise_med_item, parent, false);
+        View view = inflater.inflate(R.layout.med_item, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.name.setText(priseList.get(position).getRefMed().getName());
-        holder.desc.setText("Take "+priseList.get(position).getQte()+" application(s)");
-        holder.heure.setText(priseList.get(position).getHeure());
+        holder.name.setText(medsList.get(position).getName());
+        holder.desc.setText("Date de début : "+medsList.get(position).getDateDebut().substring(0,10));
     }
 
     @Override
     public int getItemCount() {
-        return priseList.size();
+        return medsList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -56,7 +56,7 @@ public class listMedsAdapter extends RecyclerView.Adapter<listMedsAdapter.MyView
             super(itemView);
             name = itemView.findViewById(R.id.medicationName);
             desc = itemView.findViewById(R.id.medicationDesc);
-            heure = itemView.findViewById(R.id.heure);
+
 
 
         }

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.myapplication.listOfMedication.listOfMedicationPage.listOfMyMeds;
 import com.example.myapplication.listOfPriseHomePage.listOfPriseHomePage;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -42,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
                    selectedFragment = new listOfPriseHomePage();
                     break;
                 case R.id.navigation_add:
-                    if(countMyMeds()==0){
+                    if(countMyMeds()!=0){
                         selectedFragment = new fragment_add_med();
                     }else{
-                        selectedFragment = new more();
+                        selectedFragment = new listOfMyMeds();
                     }
 //                this.mainFragment.updateDesignWhenUserClickedBottomView(MainFragment.REQUEST_LOGO);
                     break;
