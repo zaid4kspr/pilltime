@@ -89,11 +89,6 @@ public class med_form extends AppCompatActivity implements DatePickerDialog.OnDa
 
 
 // Create an ArrayAdapter using the string array and a default spinner layout
-
-
-
-
-
 //
 //        Button BtnAdd = findViewById(R.id.addBtn);
 //        BtnAdd.setOnClickListener(new View.OnClickListener() {

@@ -3,44 +3,41 @@ package com.example.myapplication.listOfMedication.listOfMedicationPage;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.MainActivity;
+
 import com.example.myapplication.R;
 import com.example.myapplication.RetrofitClient;
 import com.example.myapplication.data.model.MedicamentModel;
-import com.example.myapplication.data.model.PriseModel;
-import com.example.myapplication.measurements;
+
 import com.example.myapplication.med_form;
 import com.google.android.material.button.MaterialButton;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+
+import com.example.myapplication.dialog_take;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import devs.mulham.horizontalcalendar.HorizontalCalendar;
-import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class listOfMyMeds extends Fragment {
+public class listOfMyMeds extends Fragment implements listOfMyMedsAdapter.onMedListener {
 
     @BindView(R.id.listMeds) RecyclerView listMedsRview;
-
+    ArrayList<MedicamentModel> medsList;
 
 
     @Override
@@ -78,12 +75,11 @@ public class listOfMyMeds extends Fragment {
                 if (response.isSuccessful()) {
 
                     System.out.println(response.code());
-                    ArrayList<MedicamentModel> medsList = response.body();
+                    medsList = response.body();
                     // do something with books here
 
-                    listOfMyMedsAdapter myAdapter = new listOfMyMedsAdapter(getContext(), medsList);
-                    listMedsRview.setAdapter(myAdapter);
-                    listMedsRview.setLayoutManager(new LinearLayoutManager(getContext()));
+                    setTheAdapter();
+
 
                 } else {
                 }
@@ -106,4 +102,27 @@ public class listOfMyMeds extends Fragment {
         startActivity(i);
     }
 
+    @Override
+    public void onMedicationClick(int position) {
+
+       // Toast.makeText(getContext(), medsList.get(position).getName(), Toast.LENGTH_SHORT).show();
+
+        Intent i = new Intent(getContext(),dialog_take.class);
+        i.putExtra("name", medsList.get(position).getName());
+        i.putExtra("id", medsList.get(position).getId());
+        i.putExtra("dateDebut", medsList.get(position).getDateDebut());
+        i.putExtra("Duree", medsList.get(position).getDuree().toString());
+        i.putExtra("program", medsList.get(position).getProgramme());
+        i.putExtra("user", medsList.get(position).getUser());
+        startActivity(i);
+
+
+    }
+
+
+    public void setTheAdapter( ){
+        listOfMyMedsAdapter myAdapter = new listOfMyMedsAdapter(getContext(), medsList,this);
+        listMedsRview.setAdapter(myAdapter);
+        listMedsRview.setLayoutManager(new LinearLayoutManager(getContext()));
+    }
 }

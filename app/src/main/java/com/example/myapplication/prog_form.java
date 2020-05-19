@@ -13,12 +13,7 @@ import android.widget.TimePicker;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import com.example.myapplication.data.model.MedicamentModel;
@@ -101,7 +96,6 @@ public class prog_form extends AppCompatActivity implements DatePickerDialog.OnD
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-
         dateDebutJava = c.getTime();
 
         String currentDateString = dateFormat.format(c.getTime());
@@ -119,7 +113,6 @@ public class prog_form extends AppCompatActivity implements DatePickerDialog.OnD
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Integer duree = Integer.parseInt(duree_med_form.getEditText().getText().toString()) ;
         String name = medName.getEditText().getText().toString() ;
-
 
         Calendar c = Calendar.getInstance();
         c.setTime(dateDebutJava);
@@ -145,7 +138,6 @@ public class prog_form extends AppCompatActivity implements DatePickerDialog.OnD
                     // RouteToHome();
                     Toast.makeText(prog_form.this, "added with sucess", Toast.LENGTH_SHORT).show();
                     routeToProgList();
-
                 }
 
             }
@@ -158,7 +150,7 @@ public class prog_form extends AppCompatActivity implements DatePickerDialog.OnD
     }
 
     void routeToProgList(){
-        Intent i =new Intent(getBaseContext(), listOfPrograms.class);
+        Intent i =new Intent(getBaseContext(), MainActivity.class);
         startActivity(i);
     }
 

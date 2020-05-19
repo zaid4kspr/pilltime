@@ -47,13 +47,14 @@
                         android:text="Boudhebi7"
                         android:textColor="@color/colorPrimaryDark"
 
-                        android:textSize="18dp" />
+                        android:textSize="16dp" />
 
                     <TextView
                         android:id="@+id/progRest"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="15 jours restants" />
+                        android:text="15 jours restants"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
             </LinearLayout>
