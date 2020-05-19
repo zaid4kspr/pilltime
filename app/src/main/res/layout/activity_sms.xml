@@ -20,7 +20,6 @@
             android:orientation="vertical"
             android:padding="20dp">
             <LinearLayout
-                android:id="@+id/number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -33,18 +32,19 @@
                     android:layout_weight="10"
                     android:textColor="#000"
                     android:textSize="20sp"
-                    android:id="@+id/duree_med_form"
+                    android:id="@+id/number"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Number">
+         >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:text="190"
+                        android:enabled="false"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-
 
 
 
@@ -55,20 +55,22 @@
                 android:padding="16dp"
                 android:weightSum="12">
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/msg"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="10"
                     android:textColor="#000"
                     android:textSize="20sp"
-                    android:hint="Your message">
+                    android:id="@+id/msg"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text" />
+                        android:layout_height="match_parent"
+                        android:inputType="text"
+                        android:text="Please help me , rani mchomgh !"
+                        android:enabled="false"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
