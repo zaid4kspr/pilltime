@@ -1,4 +1,5 @@
 package com.example.myapplication;
+import com.example.myapplication.listOfTemp.temp;
 
 import android.content.Context;
 import android.content.Intent;
@@ -36,10 +37,23 @@ public class more extends Fragment {
         return view;
 
     }
+
+    int countTemp(){
+
+        return 5;
+
+    }
     @OnClick(R.id.Measurements)
     public void submit() {
-        Intent i =new Intent(getActivity(), measurements.class);
-        startActivity(i);
+        if(countTemp()==0){
+            Intent i =new Intent(getActivity(), measurements.class);
+            startActivity(i);
+        }else{
+            Intent i =new Intent(getActivity(), temp.class);
+            startActivity(i);
+        }
+
+
 
     }
     @OnClick(R.id.Report)
