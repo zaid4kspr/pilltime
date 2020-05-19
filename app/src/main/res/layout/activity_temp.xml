@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".temp"
+    tools:context=".listOfTemp.temp"
     >
 <LinearLayout
     android:layout_width="match_parent"
@@ -15,11 +15,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></androidx.cardview.widget.CardView>
 
-    <lecho.lib.hellocharts.view.LineChartView
-        android:id="@+id/chart"
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chartTemp"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:onClick="onClickCheckGettingTemp" />
+        android:layout_height="170dp" />
+
+
+    S
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,6 +43,12 @@
             android:layout_weight="9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listMeds"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

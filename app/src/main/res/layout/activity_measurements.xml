@@ -21,7 +21,7 @@
             android:layout_width="143dp"
             android:layout_height="149dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/measurement" />
+            app:srcCompat="@drawable/temp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -30,7 +30,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:text="Track measurements"
+            android:text="Track temperature"
             android:textColor="#56b0b6"
             android:textColorLink="#3F51B5"
             android:textSize="30dp" />
@@ -43,7 +43,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="50dp"
             android:gravity="center"
-            android:text="Record your body measurements, lab results, vitals and more"
+            android:text="Record your body temperature"
             android:textStyle="normal" />
 
         <Button
@@ -54,7 +54,7 @@
             android:layout_marginTop="150dp"
             android:backgroundTint="#56b0b6"
             android:onClick="onClickStartSelectMeas"
-            android:text="Add a measurement" />
+            android:text="Add a temperature measurment" />
 
 
     </LinearLayout>

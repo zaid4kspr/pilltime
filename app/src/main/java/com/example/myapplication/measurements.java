@@ -16,6 +16,6 @@ public class measurements extends AppCompatActivity {
 
     }
     public void onClickStartSelectMeas(View v) {
-        Intent i =new Intent(getBaseContext(), meas_select.class);
+        Intent i =new Intent(getBaseContext(), add_temp.class);
         startActivity(i);            }
 }

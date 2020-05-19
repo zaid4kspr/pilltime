@@ -104,7 +104,11 @@ public class prog_form extends AppCompatActivity implements DatePickerDialog.OnD
 
     }
 
-
+    @OnClick(R.id.addCancelProg)
+     void onClickCancelProg(View v){
+        Intent i =new Intent(getBaseContext(), listOfPrograms.class);
+        startActivity(i);
+    }
 
 
 

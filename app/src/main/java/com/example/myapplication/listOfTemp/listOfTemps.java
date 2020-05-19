@@ -1,4 +1,4 @@
-package com.example.myapplication.listOfProgramms;
+package com.example.myapplication.listOfTemp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,18 +11,13 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.ItemTouchHelper;
-
 
 import com.example.myapplication.R;
 import com.example.myapplication.RetrofitClient;
-import com.example.myapplication.data.model.ProgrammeModel;
+import com.example.myapplication.data.model.TemperatureModel;
 import com.example.myapplication.prog_form;
 
-import androidx.recyclerview.widget.DividerItemDecoration;
-import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
-import com.google.android.material.snackbar.Snackbar
-        ;
+
 import java.util.ArrayList;
 
 
@@ -34,10 +29,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class listOfPrograms  extends Fragment {
-
-
-
+public class listOfTemps  extends Fragment {
 
     @BindView(R.id.listMeds)
     RecyclerView listMedsRview;
@@ -48,60 +40,59 @@ public class listOfPrograms  extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_prog_list, container, false);
+        View view = inflater.inflate(R.layout.activity_temp, container, false);
         ButterKnife.bind(this, view);
 
         SharedPreferences preferences = this.getActivity().getSharedPreferences("myprefs", getContext().MODE_PRIVATE);
         String userId = preferences.getString("id", "");
+
         String userQueryparam = "{\"user\":\"" + userId + "\"}";
-        getListOfProgram(userQueryparam);
+
+
+        getListOfPTemp(userQueryparam);
+
         return view;
     }
-    @OnClick(R.id.addProg)
+  /*  @OnClick(R.id.addProg)
     public void onClickAddProgramme(View v){
 
         Intent i =new Intent(getActivity(), prog_form.class);
         startActivity(i);
-    }
+    }*/
 
 
+    public void getListOfPTemp(String userQueryparam) {
 
-    public void getListOfProgram(String userQueryparam) {
 
-
-        Call<ArrayList<ProgrammeModel>> call = RetrofitClient.getInstance().getApi().getProgramme(
+        Call<ArrayList<TemperatureModel>> call = RetrofitClient.getInstance().getApi().getTemperature(
 
                 userQueryparam
 
 
         );
-        call.enqueue(new Callback<ArrayList<ProgrammeModel>>() {
+        call.enqueue(new Callback<ArrayList<TemperatureModel>>() {
             @Override
-            public void onResponse(Call<ArrayList<ProgrammeModel>> call, Response<ArrayList<ProgrammeModel>> response) {
+            public void onResponse(Call<ArrayList<TemperatureModel>> call, Response<ArrayList<TemperatureModel>> response) {
                 if (response.isSuccessful()) {
+
                     System.out.println(response.code());
-                    ArrayList<ProgrammeModel> programmList = response.body();
+                    ArrayList<TemperatureModel> tempList = response.body();
                     // do something with books here
-                    listMedsRview.setLayoutManager(new LinearLayoutManager(getContext()));
-                    listProgAdapter myAdapter = new listProgAdapter(getContext(), programmList);
+
+                    listTempAdapter myAdapter = new listTempAdapter(getContext(), tempList);
                     listMedsRview.setAdapter(myAdapter);
-                    ItemTouchHelper itemTouchHelper = new
-                            ItemTouchHelper(new SwipeToDeleteCallback(myAdapter));
-                    itemTouchHelper.attachToRecyclerView(listMedsRview);
+                    listMedsRview.setLayoutManager(new LinearLayoutManager(getContext()));
 
-                    // listMedsRview.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
-
+                } else {
                 }
-
             }
 
             @Override
-            public void onFailure(Call<ArrayList<ProgrammeModel>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<TemperatureModel>> call, Throwable t) {
                 System.out.println("Something went wrong!");
 
             }
-        }
-        );
+        });
 
 
     }

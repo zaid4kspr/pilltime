@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.data.model.TemperatureModel;
+import com.example.myapplication.listOfTemp.temp;
 import com.example.myapplication.ui.DatePickerFragment;
 import com.example.myapplication.ui.TimePickerFragment;
 import com.google.android.material.textfield.TextInputLayout;
@@ -70,10 +71,9 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
         Button BtnCancel = findViewById(R.id.addCancelTemp);
         BtnSave.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                addTemperature();
-//                Intent i =new Intent(add_temp.this, temp.class);
-//                startActivity(i);
+            public void onClick(View v) { addTemperature();
+             Intent i =new Intent(add_temp.this, temp.class);
+              startActivity(i);
             }
         });
         BtnCancel.setOnClickListener(new View.OnClickListener() {

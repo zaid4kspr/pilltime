@@ -1,8 +1,10 @@
 package com.example.myapplication.data.model;
 
+import com.github.mikephil.charting.data.Entry;
+
 import java.io.Serializable;
 
-public class TemperatureModel implements Serializable {
+public class TemperatureModel extends Entry implements Serializable {
    private  Float degres;
     private  String date;
     private  String ref_p;
@@ -25,6 +27,11 @@ public class TemperatureModel implements Serializable {
         this.user = user;
         this.note = note;
         this._id = _id;
+    }
+
+    public TemperatureModel(Float degres, String date) {
+        this.degres = degres;
+        this.date = date;
     }
 
     public String get_id() {

@@ -12,13 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SMS"></activity>
         <activity android:name=".prog_form" />
         <activity android:name=".add_program" />
         <activity android:name=".instruction_form" />
         <activity android:name=".edit_instructions_program" />
         <activity android:name=".fragment_add_prog" />
         <activity android:name=".add_temp" />
-        <activity android:name=".temp" />
+        <activity android:name=".listOfTemp.temp" />
         <activity android:name=".list_meas" />
         <activity android:name=".meas_select" />
         <activity android:name=".measurements" />
