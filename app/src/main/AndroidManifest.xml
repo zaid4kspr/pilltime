@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".testActivity"></activity>
+        <activity android:name=".SMS"></activity>
         <activity android:name=".prog_form" />
         <activity android:name=".add_program" />
         <activity android:name=".instruction_form" />

@@ -55,7 +55,6 @@
                         android:layout_height="wrap_content"
                         android:text="15 jours restants" />
                 </LinearLayout>
-
             </LinearLayout>
         </LinearLayout>
 

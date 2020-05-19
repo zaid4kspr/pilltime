@@ -45,7 +45,7 @@ public interface Api {
 
 
 
-    @GET("temperature")
+    @GET("temperature?sort=date")
     Call<ArrayList<TemperatureModel>> getTemperature(
             @Query("query") String query
     );

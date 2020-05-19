@@ -11,13 +11,18 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ItemTouchHelper;
+
 
 import com.example.myapplication.R;
 import com.example.myapplication.RetrofitClient;
 import com.example.myapplication.data.model.ProgrammeModel;
 import com.example.myapplication.prog_form;
 
-
+import androidx.recyclerview.widget.DividerItemDecoration;
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
+import com.google.android.material.snackbar.Snackbar
+        ;
 import java.util.ArrayList;
 
 
@@ -48,17 +53,8 @@ public class listOfPrograms  extends Fragment {
 
         SharedPreferences preferences = this.getActivity().getSharedPreferences("myprefs", getContext().MODE_PRIVATE);
         String userId = preferences.getString("id", "");
-
-
-
-
-
-
         String userQueryparam = "{\"user\":\"" + userId + "\"}";
-
-
         getListOfProgram(userQueryparam);
-
         return view;
     }
     @OnClick(R.id.addProg)
@@ -67,6 +63,7 @@ public class listOfPrograms  extends Fragment {
         Intent i =new Intent(getActivity(), prog_form.class);
         startActivity(i);
     }
+
 
 
     public void getListOfProgram(String userQueryparam) {
@@ -82,17 +79,20 @@ public class listOfPrograms  extends Fragment {
             @Override
             public void onResponse(Call<ArrayList<ProgrammeModel>> call, Response<ArrayList<ProgrammeModel>> response) {
                 if (response.isSuccessful()) {
-
                     System.out.println(response.code());
                     ArrayList<ProgrammeModel> programmList = response.body();
                     // do something with books here
-
+                    listMedsRview.setLayoutManager(new LinearLayoutManager(getContext()));
                     listProgAdapter myAdapter = new listProgAdapter(getContext(), programmList);
                     listMedsRview.setAdapter(myAdapter);
-                    listMedsRview.setLayoutManager(new LinearLayoutManager(getContext()));
+                    ItemTouchHelper itemTouchHelper = new
+                            ItemTouchHelper(new SwipeToDeleteCallback(myAdapter));
+                    itemTouchHelper.attachToRecyclerView(listMedsRview);
 
-                } else {
+                    // listMedsRview.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
+
                 }
+
             }
 
             @Override
@@ -100,7 +100,8 @@ public class listOfPrograms  extends Fragment {
                 System.out.println("Something went wrong!");
 
             }
-        });
+        }
+        );
 
 
     }

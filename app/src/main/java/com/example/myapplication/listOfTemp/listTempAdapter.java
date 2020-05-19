@@ -43,11 +43,7 @@ public class listTempAdapter extends RecyclerView.Adapter<listTempAdapter.MyView
         if (temperatureList.get(position).getDegres()>40) {
             holder.maladie.setTextColor(Color.rgb(255, 71, 26));
         }
-        holder.desc.setText(temperatureList.get(position).getDate());
-
-
-
-
+        holder.desc.setText(temperatureList.get(position).getDate().substring(0,10));
     }
 
     @Override

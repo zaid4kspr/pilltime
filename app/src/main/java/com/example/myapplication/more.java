@@ -42,6 +42,12 @@ public class more extends Fragment {
         startActivity(i);
 
     }
+    @OnClick(R.id.Report)
+    public void submitReport() {
+        Intent i =new Intent(getActivity(), SMS.class);
+        startActivity(i);
+
+    }
 
 
 }
