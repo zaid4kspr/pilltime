@@ -16,10 +16,14 @@ public class list_meas extends AppCompatActivity {
         setContentView(R.layout.activity_list_meas);
     }
     public void onClickAddMeas(View v) {
+
         Intent i =new Intent(getBaseContext(), meas_select.class);
-        startActivity(i);            }
+        startActivity(i);
+
+    }
 
     public void onClickGoToTemp(View v) {
         Intent i =new Intent(getBaseContext(), temp.class);
-        startActivity(i);            }
+        startActivity(i);
+    }
 }

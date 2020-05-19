@@ -15,6 +15,7 @@ public class meas_select extends AppCompatActivity {
         setContentView(R.layout.activity_meas_select);
 
     }
+
     public void onClickSelectedMeas(View v) {
         Intent i =new Intent(getBaseContext(), list_meas.class);
         startActivity(i);            }

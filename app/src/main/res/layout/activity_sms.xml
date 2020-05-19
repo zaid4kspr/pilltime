@@ -33,14 +33,13 @@
                     android:textColor="#000"
                     android:textSize="20sp"
                     android:id="@+id/number"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-         >
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
-                        android:text="190"
+                        android:text="52202772"
                         android:enabled="false"/>
 
                 </com.google.android.material.textfield.TextInputLayout>

@@ -49,6 +49,12 @@ public class temp extends AppCompatActivity  {
         getTemperature(userQueryparam);
     }
 
+    int countTemp(){
+
+        return 0;
+
+    }
+
     public  void setLineGraph(ArrayList<Entry> yValues,  String[] values) {
         mChart.setDragEnabled(true);
         mChart.setScaleEnabled(false);
@@ -93,8 +99,8 @@ public class temp extends AppCompatActivity  {
     public void setData(ArrayList<TemperatureModel> tempList) {
         for(int i = 0; i < tempList.size(); i++){
           yValues.add(new Entry(i,tempList.get(i).getDegres()));
-            values[i]=tempList.get(i).getDate().substring(0,10);
-
+          values[i]=tempList.get(i).getDate().substring(0,10);
+        }
 
         setLineGraph(yValues,values);
         mChart.notifyDataSetChanged();
@@ -103,7 +109,7 @@ public class temp extends AppCompatActivity  {
 
        // Log.d("valuessyTEST", String.valueOf(yValues));
 
-    }}
+    }
 
     public class MyXAxisValueFormatter extends ValueFormatter {
         private String[]  mValues ;
