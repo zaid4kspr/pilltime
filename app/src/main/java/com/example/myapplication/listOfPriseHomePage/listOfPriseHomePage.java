@@ -1,8 +1,12 @@
 package com.example.myapplication.listOfPriseHomePage;
 
+import android.app.Notification;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,10 +15,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.RetrofitClient;
 import com.example.myapplication.data.model.PriseModel;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -30,11 +36,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.myapplication.alerteReceiverPack.App.CHANNEL_1_ID;
+import static com.example.myapplication.alerteReceiverPack.App.CHANNEL_2_ID;
+
 
 public class listOfPriseHomePage extends Fragment {
 
     @BindView(R.id.listMeds)
     RecyclerView listMedsRview;
+    private ShimmerFrameLayout mShimmerViewContainer;
+    private NotificationManagerCompat notificationManager;
 
     ArrayList<PriseModel> priseList = new ArrayList<PriseModel>();
 
@@ -44,6 +55,13 @@ public class listOfPriseHomePage extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home_calendar_page, container, false);
+        mShimmerViewContainer = view.findViewById(R.id.shimmer_view_container);
+
+        notificationManager = NotificationManagerCompat.from(getContext());
+
+
+        mShimmerViewContainer.startShimmer();
+
         ButterKnife.bind(this, view);
 
         SharedPreferences preferences = this.getActivity().getSharedPreferences("myprefs", getContext().MODE_PRIVATE);
@@ -75,8 +93,9 @@ public class listOfPriseHomePage extends Fragment {
                 String tomorrow = format1.format(cal.getTime());
 
 
-                String userQueryparam = "{\"user\":\"" + userId + "\", " + "\"date\" : {\"$gt\": \"" + now + "\" ,\"$lt\": \"" + tomorrow + "\"}}";
+                String userQueryparam = "{\"user\":\"" + userId + "\", " + "\"date\" : {\"$gte\": \"" + now + "\" ,\"$lt\": \"" + tomorrow + "\"}}";
 
+              //sendOnChannel1();
                 getListOfMeds(userQueryparam);
 
             }
@@ -88,8 +107,6 @@ public class listOfPriseHomePage extends Fragment {
             }
 
         });
-
-
 
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -108,7 +125,7 @@ public class listOfPriseHomePage extends Fragment {
         String userQueryparam = "{\"user\":\"" + userId + "\", " + "\"date\" : {\"$gt\": \"" + dateDebut + "\" ,\"$lt\": \"" + dateFin + "\"}}";
         Log.d("zzzz", userQueryparam);
 
-        getListOfMeds(userQueryparam);
+          getListOfMeds(userQueryparam);
 
         return view;
     }
@@ -127,11 +144,11 @@ public class listOfPriseHomePage extends Fragment {
             @Override
             public void onResponse(Call<ArrayList<PriseModel>> call, Response<ArrayList<PriseModel>> response) {
                 if (response.isSuccessful()) {
-
+                    mShimmerViewContainer.stopShimmer();
+                    mShimmerViewContainer.setVisibility(View.GONE);
                     System.out.println(response.code());
                     ArrayList<PriseModel> priseList = response.body();
                     // do something with books here
-
                     listMedsAdapter myAdapter = new listMedsAdapter(getContext(), priseList);
                     listMedsRview.setAdapter(myAdapter);
                     listMedsRview.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -150,5 +167,43 @@ public class listOfPriseHomePage extends Fragment {
 
     }
 
+
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//    }
+//
+//    @Override
+//    public void onPause() {
+//        mShimmerViewContainer.stopShimmerAnimation();
+//        super.onPause();
+//    }
+
+
+
+    public void sendOnChannel1() {
+        String title = "Pill Time";
+        String message = "Ochreb Dwek Ya mridhh";
+        Notification notification = new NotificationCompat.Builder(getContext(), CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.ic_pill)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
+                .build();
+        notificationManager.notify(1, notification);
+    }
+
+    public void sendOnChannel2() {
+        String title = "test";
+        String message = "test";
+        Notification notification = new NotificationCompat.Builder(getContext(), CHANNEL_2_ID)
+                .setSmallIcon(R.drawable.ic_pill)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_LOW)
+                .build();
+        notificationManager.notify(2, notification);
+    }
 
 }

@@ -19,6 +19,7 @@ import com.example.myapplication.RetrofitClient;
 import com.example.myapplication.data.model.MedicamentModel;
 
 import com.example.myapplication.med_form;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.button.MaterialButton;
 
 
@@ -38,6 +39,8 @@ public class listOfMyMeds extends Fragment implements listOfMyMedsAdapter.onMedL
 
     @BindView(R.id.listMeds) RecyclerView listMedsRview;
     ArrayList<MedicamentModel> medsList;
+    private ShimmerFrameLayout mShimmerViewContainer;
+
 
 
     @Override
@@ -45,6 +48,9 @@ public class listOfMyMeds extends Fragment implements listOfMyMedsAdapter.onMedL
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list_of_meds, container, false);
+        mShimmerViewContainer = view.findViewById(R.id.shimmer_view_container);
+
+        mShimmerViewContainer.startShimmer();
         ButterKnife.bind(this, view);
 
         SharedPreferences preferences = this.getActivity().getSharedPreferences("myprefs", getContext().MODE_PRIVATE);
@@ -73,7 +79,8 @@ public class listOfMyMeds extends Fragment implements listOfMyMedsAdapter.onMedL
             @Override
             public void onResponse(Call<ArrayList<MedicamentModel>> call, Response<ArrayList<MedicamentModel>> response) {
                 if (response.isSuccessful()) {
-
+                    mShimmerViewContainer.stopShimmer();
+                    mShimmerViewContainer.setVisibility(View.GONE);
                     System.out.println(response.code());
                     medsList = response.body();
                     // do something with books here

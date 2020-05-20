@@ -6,5 +6,8 @@
     <color name="grey">#BFBFBF</color>
     <color name="white">#FFF</color>
     <color name="colorAccentDark">#4aa87a</color>
+    <color name="placeholder_bg">#dddddd</color>
+
+
 
 </resources>

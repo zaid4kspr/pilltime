@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
+import com.example.myapplication.data.model.AddPriseAndUpdateProgramModel;
 import com.example.myapplication.data.model.MedicamentModel;
 import com.example.myapplication.data.model.PriseModel;
+import com.example.myapplication.data.model.PrisesResponse;
 import com.example.myapplication.data.model.ProgrammeModel;
 import com.example.myapplication.data.model.ResponseObject;
 import com.example.myapplication.data.model.TemperatureModel;
@@ -41,8 +43,7 @@ public interface Api {
     @POST("temperature")
     Call<ResponseBody> addTemperature(
             @Body TemperatureModel t
-            );
-
+    );
 
 
     @GET("temperature?sort=date")
@@ -72,10 +73,11 @@ public interface Api {
     );
 
 
-  @POST("medicament")
+    @POST("medicament")
     Call<ResponseBody> addMeds(
             @Body MedicamentModel m
     );
+
     @POST("programme")
     Call<ResponseBody> addProgramme(
             @Body ProgrammeModel p
@@ -85,9 +87,12 @@ public interface Api {
     @GET("programme")
     Call<ArrayList<ProgrammeModel>> getAllProgramme();
 
-  @GET("medicament/count")
+    @GET("medicament/count")
     Call<ResponseBody> countMeds();
 
 
-
+    @POST("prise/costumPriseApi")
+    Call<ArrayList<PrisesResponse>> prisev2(
+            @Body AddPriseAndUpdateProgramModel p
+    );
 }

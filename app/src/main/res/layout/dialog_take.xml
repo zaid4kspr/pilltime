@@ -6,63 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".dialog_take">
 
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
-        android:paddingBottom="50dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Medication Name">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
-                android:id="@+id/dateDebutLayout"
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="10"
-                android:orientation="horizontal"
-                android:padding="0dp">
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/name"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Medication Name">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/dateDebut"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="10"
 
                     android:hint="Date debut"
                     android:textColor="#000"
@@ -77,261 +60,261 @@
                         android:inputType="date" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/duree"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="0dp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/duree_med_form"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                <LinearLayout
+                    android:id="@+id/duree"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:hint="Durée"
-                    android:textColor="#000"
-                    android:textSize="20sp">
+                    android:orientation="horizontal"
+                    android:padding="0dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/duree_med_form"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="number|text" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10"
+                        android:hint="Durée"
+                        android:textColor="#000"
+                        android:textSize="20sp">
 
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number|text" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="0dp"
-                android:orientation="vertical">
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/Programme"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Programme"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
+                    android:layout_height="75dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="0dp"
+                    android:orientation="vertical">
 
-                <Spinner
-                    android:id="@+id/spinner"
-
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="0dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/ReminderTimeokay"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Heures de rappel "
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-
-                <Spinner
-                    android:id="@+id/remindersTimes"
-
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/takes1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="10"
-                android:orientation="horizontal"
-                android:padding="0dp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-
-                    android:hint="Heure"
-                    android:textColor="#000"
-                    android:textSize="20sp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/time1"
+                    <TextView
+                        android:id="@+id/Programme"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="text" />
+                        android:layout_height="wrap_content"
+                        android:text="Programme"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                    <Spinner
+                        android:id="@+id/spinner"
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/qte1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_weight="10"
-                    android:hint="Quantité"
-                    android:textColor="#000"
-                    android:textSize="20sp">
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:orientation="vertical">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <TextView
+                        android:id="@+id/ReminderTimeokay"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="number" />
+                        android:layout_height="wrap_content"
+                        android:text="Heures de rappel "
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                    <Spinner
+                        android:id="@+id/remindersTimes"
+
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/takes1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:padding="0dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10"
+
+                        android:hint="Heure"
+                        android:textColor="#000"
+                        android:textSize="20sp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/qte1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="10"
+                        android:hint="Quantité"
+                        android:textColor="#000"
+                        android:textSize="20sp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/takes2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:padding="0dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10"
+
+                        android:hint="Heure"
+                        android:textColor="#000"
+                        android:textSize="20sp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time2"
+                            android:layout_width="match_parent"
+
+
+                            android:layout_height="match_parent"
+                            android:inputType="datetime|text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/qte2"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+
+                        android:layout_weight="10"
+                        android:hint="Quantité"
+                        android:textColor="#000"
+                        android:textSize="20sp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/takes3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:padding="0dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10"
+
+                        android:hint="Heure"
+                        android:textColor="#000"
+                        android:textSize="20sp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/time3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="datetime|text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/qte3"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+
+                        android:layout_weight="10"
+                        android:hint="Quantité"
+                        android:textColor="#000"
+                        android:textSize="20sp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="102dp"
+                    android:baselineAligned="false"
+                    android:paddingTop="30dp">
+
+                    <Button
+                        android:id="@+id/delete"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="6"
+                        android:text="Supprimer" />
+
+                    <Button
+                        android:id="@+id/addBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="6"
+                        android:text="Enregistrer" />
+
+
+                </LinearLayout>
+
+
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/takes2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="10"
-                android:orientation="horizontal"
-                android:padding="0dp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-
-                    android:hint="Heure"
-                    android:textColor="#000"
-                    android:textSize="20sp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/time2"
-                        android:layout_width="match_parent"
-
-
-                        android:layout_height="match_parent"
-                        android:inputType="datetime|text" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/qte2"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-
-                    android:layout_weight="10"
-                    android:hint="Quantité"
-                    android:textColor="#000"
-                    android:textSize="20sp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-
-
-                        android:inputType="number" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/takes3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="10"
-                android:orientation="horizontal"
-                android:padding="0dp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-
-                    android:hint="Heure"
-                    android:textColor="#000"
-                    android:textSize="20sp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/time3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="datetime|text" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/qte3"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-
-                    android:layout_weight="10"
-                    android:hint="Quantité"
-                    android:textColor="#000"
-                    android:textSize="20sp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-
-
-                        android:inputType="number" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <Button
-                    android:id="@+id/delete"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:text="Supprimer" />
-
-                <Button
-                    android:id="@+id/addBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginLeft="20dp"
-                    android:text="Enregistrer" />
-
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

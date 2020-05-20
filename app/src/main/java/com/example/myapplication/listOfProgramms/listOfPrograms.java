@@ -21,6 +21,8 @@ import com.example.myapplication.prog_form;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
+
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.snackbar.Snackbar
         ;
 import java.util.ArrayList;
@@ -36,6 +38,7 @@ import retrofit2.Response;
 
 public class listOfPrograms  extends Fragment {
 
+    private ShimmerFrameLayout mShimmerViewContainer;
 
 
 
@@ -49,7 +52,16 @@ public class listOfPrograms  extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_prog_list, container, false);
+
+        mShimmerViewContainer = view.findViewById(R.id.shimmer_view_container);
+
+
+        mShimmerViewContainer.startShimmer();
+
+
         ButterKnife.bind(this, view);
+
+
 
         SharedPreferences preferences = this.getActivity().getSharedPreferences("myprefs", getContext().MODE_PRIVATE);
         String userId = preferences.getString("id", "");
@@ -79,7 +91,10 @@ public class listOfPrograms  extends Fragment {
             @Override
             public void onResponse(Call<ArrayList<ProgrammeModel>> call, Response<ArrayList<ProgrammeModel>> response) {
                 if (response.isSuccessful()) {
-                    System.out.println(response.code());
+
+                    mShimmerViewContainer.stopShimmer();
+                    mShimmerViewContainer.setVisibility(View.GONE);
+
                     ArrayList<ProgrammeModel> programmList = response.body();
                     // do something with books here
                     listMedsRview.setLayoutManager(new LinearLayoutManager(getContext()));
