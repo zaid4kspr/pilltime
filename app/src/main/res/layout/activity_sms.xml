@@ -39,8 +39,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
-                        android:text="52202772"
-                        android:enabled="false"/>
+                        android:text="52202772" />
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -68,8 +67,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="text"
-                        android:text="Please help me , rani mchomgh !"
-                        android:enabled="false"/>
+                        android:text="Please help me , rani mchomgh !" />
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>

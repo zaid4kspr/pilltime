@@ -57,10 +57,7 @@ public class SMS extends AppCompatActivity {
         setContentView(R.layout.activity_sms);
         number = (TextInputLayout) findViewById(R.id.number);
         msg = (TextInputLayout) findViewById(R.id.msg);
-
         sendButton = (Button) findViewById(R.id.send);
-
-
         sentPI = PendingIntent.getBroadcast(SMS.this, 0, new Intent(SENT), 0);
         deliveredPI = PendingIntent.getBroadcast(SMS.this, 0, new Intent(DELIVERED), 0);
 

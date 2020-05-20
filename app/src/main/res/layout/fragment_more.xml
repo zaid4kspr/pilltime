@@ -13,7 +13,34 @@ tools:context=".more">
     android:weightSum="13"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="30dp">
+    <LinearLayout
+        android:id="@+id/Doctors"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
 
+        <ImageView
+            android:id="@+id/iconDoctors"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon4" />
+
+        <TextView
+            android:id="@+id/textDoctors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="5"
+            android:text="Nearly Doctors"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/Measurements"
         android:layout_width="match_parent"
@@ -40,7 +67,34 @@ tools:context=".more">
             android:textSize="17dp" />
         <!--so our layout is set-->
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Report"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
 
+        <ImageView
+            android:id="@+id/iconReport"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@drawable/envelope" />
+
+        <TextView
+            android:id="@+id/textReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="5"
+            android:text="Urgent SMS"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/Notes"
         android:layout_width="match_parent"
@@ -99,34 +153,7 @@ tools:context=".more">
         <!--so our layout is set-->
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/Doctors"
-        android:layout_width="match_parent"
-        android:layout_height="6dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:weightSum="6">
 
-        <ImageView
-            android:id="@+id/iconDoctors"
-            android:layout_width="20dp"
-             android:layout_height="20dp"
- android:layout_marginTop="2dp"
-            android:layout_weight="1"
-            android:src="@drawable/icon4" />
-
-        <TextView
-            android:id="@+id/textDoctors"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_weight="5"
-            android:text="Doctors"
-            android:textColor="#000"
-            android:textSize="17dp" />
-        <!--so our layout is set-->
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/Refills"
@@ -157,34 +184,7 @@ tools:context=".more">
         <!--so our layout is set-->
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/Report"
-        android:layout_width="match_parent"
-        android:layout_height="6dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:weightSum="6">
 
-        <ImageView
-            android:id="@+id/iconReport"
-            android:layout_width="20dp"
-             android:layout_height="20dp"
- android:layout_marginTop="2dp"
-            android:layout_weight="1"
-            android:src="@drawable/icon6" />
-
-        <TextView
-            android:id="@+id/textReport"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_weight="5"
-            android:text="SMS"
-            android:textColor="#000"
-            android:textSize="17dp" />
-        <!--so our layout is set-->
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/Border"

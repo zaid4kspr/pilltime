@@ -62,6 +62,13 @@ public class more extends Fragment {
         startActivity(i);
 
     }
+    @OnClick(R.id.Doctors)
+    public void submitMap() {
+        Intent i =new Intent(getActivity(), myposition.class);
+        startActivity(i);
+
+    }
+
 
 
 }

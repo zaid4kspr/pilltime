@@ -49,12 +49,6 @@ public class temp extends AppCompatActivity  {
         getTemperature(userQueryparam);
     }
 
-    int countTemp(){
-
-        return 0;
-
-    }
-
     public  void setLineGraph(ArrayList<Entry> yValues,  String[] values) {
         mChart.setDragEnabled(true);
         mChart.setScaleEnabled(false);
