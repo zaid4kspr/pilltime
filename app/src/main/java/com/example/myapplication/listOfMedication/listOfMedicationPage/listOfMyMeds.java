@@ -109,6 +109,8 @@ public class listOfMyMeds extends Fragment implements listOfMyMedsAdapter.onMedL
         startActivity(i);
     }
 
+
+
     @Override
     public void onMedicationClick(int position) {
 

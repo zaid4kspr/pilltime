@@ -57,7 +57,7 @@ public class listOfPriseHomePage extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home_calendar_page, container, false);
         mShimmerViewContainer = view.findViewById(R.id.shimmer_view_container);
 
-        notificationManager = NotificationManagerCompat.from(getContext());
+       // notificationManager = NotificationManagerCompat.from(getContext());
 
 
         mShimmerViewContainer.startShimmer();
@@ -122,7 +122,7 @@ public class listOfPriseHomePage extends Fragment {
         String dateFin = dateFormat.format(c.getTime());
 
 
-        String userQueryparam = "{\"user\":\"" + userId + "\", " + "\"date\" : {\"$gt\": \"" + dateDebut + "\" ,\"$lt\": \"" + dateFin + "\"}}";
+        String userQueryparam = "{\"user\":\"" + userId + "\", " + "\"date\" : {\"$gte\": \"" + dateDebut + "\" ,\"$lt\": \"" + dateFin + "\"}}";
         Log.d("zzzz", userQueryparam);
 
           getListOfMeds(userQueryparam);
