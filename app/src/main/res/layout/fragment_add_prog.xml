@@ -27,7 +27,7 @@
             android:layout_width="143dp"
             android:layout_height="149dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/clipboard" />
+            app:srcCompat="@drawable/programs" />
 
         <TextView
             android:id="@+id/textProgram"

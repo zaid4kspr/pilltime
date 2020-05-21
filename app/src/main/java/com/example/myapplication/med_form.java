@@ -242,6 +242,13 @@ public class med_form extends AppCompatActivity implements DatePickerDialog.OnDa
 
 
                 if (response.isSuccessful()) {
+
+                    SharedPreferences.Editor editor = preferences.edit();
+
+                    editor.putInt("meds",1);
+
+                    editor.commit();
+
                     // RouteToHome();
                     Toast.makeText(med_form.this, "added with sucess", Toast.LENGTH_SHORT).show();
                     routeToMain();

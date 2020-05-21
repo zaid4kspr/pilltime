@@ -37,8 +37,8 @@ public class listProgAdapter extends RecyclerView.Adapter<listProgAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.maladie.setText(programmeList.get(position).getMaladie());
-        holder.desc.setText(programmeList.get(position).getDuree()+" jours restants");
+        holder.maladie.setText("Program : "+programmeList.get(position).getMaladie());
+        holder.desc.setText("Duration of the program : "+programmeList.get(position).getDuree()+ " jour(s)");
        // Log.d("maladiet", programmeList.get(position).getMaladie());
       //  Log.d("maladietd", String.valueOf(programmeList.get(position).getDuree()));
     }

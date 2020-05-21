@@ -1,9 +1,11 @@
 package com.example.myapplication;
 
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
@@ -64,6 +66,9 @@ import java.util.List;
 
 public class myposition extends AppCompatActivity implements OnMapReadyCallback  {
 
+
+
+
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationProviderClient;
     private PlacesClient placesClient;
@@ -83,6 +88,8 @@ public class myposition extends AppCompatActivity implements OnMapReadyCallback 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myposition);
       //  String apiKey = "AIzaSyBDPt8lcE4-czi-FS5Sd1BtHQcLbW-kZ18";
+
+
         btnFind = findViewById(R.id.btn_find);
         rippleBg = findViewById(R.id.ripple_bg);
 
@@ -250,7 +257,6 @@ public class myposition extends AppCompatActivity implements OnMapReadyCallback 
                     }
                 });
     }
-
 
 
 }

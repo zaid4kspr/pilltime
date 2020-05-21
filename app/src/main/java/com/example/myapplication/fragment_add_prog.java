@@ -49,7 +49,7 @@ public class fragment_add_prog extends Fragment {
 
     @OnClick(R.id.AddProgram)
     public void submit() {
-        Intent i =new Intent(getActivity(), add_program.class);
+        Intent i =new Intent(getActivity(), prog_form.class);
         startActivity(i);
 
     }}

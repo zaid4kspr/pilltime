@@ -139,6 +139,16 @@ public class prog_form extends AppCompatActivity implements DatePickerDialog.OnD
 
 
                 if (response.isSuccessful()) {
+
+
+
+
+                    SharedPreferences.Editor editor = preferences.edit();
+
+                    editor.putInt("programs",1);
+
+                    editor.commit();
+
                     // RouteToHome();
                     Toast.makeText(prog_form.this, "added with sucess", Toast.LENGTH_SHORT).show();
                     routeToProgList();
