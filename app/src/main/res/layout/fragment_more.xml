@@ -14,6 +14,31 @@ tools:context=".more">
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="30dp">
     <LinearLayout
+        android:id="@+id/Appointments"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <TextView
+            android:id="@+id/textAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:background="@drawable/background_title"
+            android:text="PillTime"
+            android:textColor="@color/white"
+
+            android:textSize="20dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
         android:id="@+id/Doctors"
         android:layout_width="match_parent"
         android:layout_height="6dp"
@@ -25,7 +50,7 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconDoctors"
             android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:layout_marginTop="2dp"
             android:layout_weight="1"
             android:src="@drawable/icon4" />
@@ -38,7 +63,7 @@ tools:context=".more">
             android:layout_weight="5"
             android:text="Nearly Doctors"
             android:textColor="#000"
-            android:textSize="17dp" />
+            android:textSize="20dp" />
         <!--so our layout is set-->
     </LinearLayout>
     <LinearLayout
@@ -53,7 +78,7 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconMeasurments"
             android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:layout_marginTop="2dp"
             android:src="@drawable/temper" />
 
@@ -64,7 +89,7 @@ tools:context=".more">
             android:layout_marginLeft="25dp"
             android:text="Temperature measurements"
             android:textColor="#000"
-            android:textSize="17dp" />
+            android:textSize="20dp" />
         <!--so our layout is set-->
     </LinearLayout>
     <LinearLayout
@@ -79,7 +104,7 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconReport"
             android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:layout_marginTop="2dp"
             android:layout_weight="1"
             android:src="@drawable/envelope" />
@@ -92,7 +117,7 @@ tools:context=".more">
             android:layout_weight="5"
             android:text="Urgent SMS"
             android:textColor="#000"
-            android:textSize="17dp" />
+            android:textSize="20dp" />
         <!--so our layout is set-->
     </LinearLayout>
     <LinearLayout
@@ -107,7 +132,7 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconNotes"
             android:layout_width="20dp"
-             android:layout_height="20dp"
+            android:layout_height="25dp"
  android:layout_marginTop="2dp"
             android:layout_weight="1"
             android:src="@drawable/icon2" />
@@ -120,69 +145,11 @@ tools:context=".more">
             android:layout_weight="5"
             android:text="Notes"
             android:textColor="#000"
-            android:textSize="17dp" />
-        <!--so our layout is set-->
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/Appointments"
-        android:layout_width="match_parent"
-        android:layout_height="6dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:weightSum="6">
-
-        <ImageView
-            android:id="@+id/iconAppointments"
-            android:layout_width="20dp"
-             android:layout_height="20dp"
- android:layout_marginTop="2dp"
-            android:layout_weight="1"
-            android:src="@drawable/icon3" />
-
-        <TextView
-            android:id="@+id/textAppointments"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_weight="5"
-            android:text="Appointments"
-            android:textColor="#000"
-            android:textSize="17dp" />
+            android:textSize="20dp" />
         <!--so our layout is set-->
     </LinearLayout>
 
 
-
-    <LinearLayout
-        android:id="@+id/Refills"
-        android:layout_width="match_parent"
-        android:layout_height="6dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:weightSum="6">
-
-        <ImageView
-            android:id="@+id/iconRefills"
-            android:layout_width="20dp"
-             android:layout_height="20dp"
- android:layout_marginTop="2dp"
-            android:layout_weight="1"
-            android:src="@drawable/icon5" />
-
-        <TextView
-            android:id="@+id/textRefills"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_weight="5"
-            android:text="Refills"
-            android:textColor="#000"
-            android:textSize="17dp" />
-        <!--so our layout is set-->
-    </LinearLayout>
 
 
 
@@ -221,7 +188,7 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconSettings"
             android:layout_width="20dp"
-             android:layout_height="20dp"
+            android:layout_height="25dp"
  android:layout_marginTop="2dp"
             android:layout_weight="1"
             android:src="@drawable/icon7" />
@@ -234,7 +201,36 @@ tools:context=".more">
             android:layout_weight="5"
             android:text="Settings"
             android:textColor="#000"
-            android:textSize="17dp" />
+            android:textSize="20dp" />
+        <!--so our layout is set-->
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Reminder"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iconReminder"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon9" />
+
+        <TextView
+            android:id="@+id/textReminder"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="5"
+            android:text="Reminder Troubleshooting"
+            android:textColor="#000"
+            android:textSize="20dp"/>
         <!--so our layout is set-->
     </LinearLayout>
 
@@ -250,51 +246,26 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconHelpSupport"
             android:layout_width="20dp"
-             android:layout_height="20dp"
+            android:layout_height="27dp"
+
  android:layout_marginTop="2dp"
             android:layout_weight="1"
-            android:src="@drawable/icon8" />
+            android:src="@drawable/logout" />
 
         <TextView
-            android:id="@+id/textHelpSupport"
+            android:id="@+id/Deco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_weight="5"
-            android:text="Help &amp; Support"
+            android:text="Log out"
+            android:textStyle="bold"
             android:textColor="#000"
-            android:textSize="17dp" />
+            android:textSize="20dp" />
         <!--so our layout is set-->
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/Reminder"
-        android:layout_width="match_parent"
-        android:layout_height="6dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:weightSum="6">
 
-        <ImageView
-            android:id="@+id/iconReminder"
-            android:layout_width="20dp"
-             android:layout_height="20dp"
- android:layout_marginTop="2dp"
-            android:layout_weight="1"
-            android:src="@drawable/icon9" />
-
-        <TextView
-            android:id="@+id/textReminder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_weight="5"
-            android:text="Reminder Troubleshooting"
-            android:textColor="#000"
-            android:textSize="17dp" />
-        <!--so our layout is set-->
-    </LinearLayout>
 
 
 </LinearLayout>

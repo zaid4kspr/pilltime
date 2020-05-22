@@ -117,14 +117,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        return preferences.getInt("meds", 0);
+        return preferences.getInt("meds", 1);
 
     }
 
 
     int CountProgramms() {
 
-        return preferences.getInt("programs", 0);
+        return preferences.getInt("programs", 1);
 
     }
 

@@ -23,6 +23,7 @@ import retrofit2.http.Query;
 
 
 public interface Api {
+
     @FormUrlEncoded
     @POST("users/register")
     Call<ResponseBody> register(
@@ -50,6 +51,8 @@ public interface Api {
     Call<ArrayList<TemperatureModel>> getTemperature(
             @Query("query") String query
     );
+
+
 
     @GET("temperature")
     Call<ArrayList<TemperatureModel>> getAllTemperature();

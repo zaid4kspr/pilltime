@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".listOfTemp.temp"
     >
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,39 +19,32 @@
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chartTemp"
         android:layout_width="match_parent"
-        android:layout_height="170dp" />
+        android:layout_margin="8dp"
+        android:layout_height="220dp" />
 
 
-    S
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_weight="8"
         android:weightSum="12">
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
-            android:textStyle="bold"
-            android:textSize="16dp"
-            android:text="Temperature (C)">
-        </TextView>
         <LinearLayout
             android:layout_weight="9"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content">
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listMeds"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
 
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </LinearLayout>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addTemp"
             android:layout_width="wrap_content"
@@ -59,6 +53,10 @@
             android:layout_margin="16dp"
             android:onClick="onClickAddTemp"
             app:srcCompat="@drawable/ic_plus_24" />
+
+
+
+
     </LinearLayout>
 </LinearLayout>
 

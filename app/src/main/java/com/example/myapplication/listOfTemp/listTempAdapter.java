@@ -1,12 +1,15 @@
 package com.example.myapplication.listOfTemp;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import  android.graphics.Color;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +20,7 @@ import com.example.myapplication.data.model.TemperatureModel;
 import java.util.ArrayList;
 
 public class listTempAdapter extends RecyclerView.Adapter<listTempAdapter.MyViewHolder> {
+
 
     ArrayList<TemperatureModel> temperatureList = new ArrayList<TemperatureModel>();
     Context context;
@@ -42,6 +46,11 @@ public class listTempAdapter extends RecyclerView.Adapter<listTempAdapter.MyView
         holder.maladie.setText(Float.toString(temperatureList.get(position).getDegres()));
         if (temperatureList.get(position).getDegres()>40) {
             holder.maladie.setTextColor(Color.rgb(255, 71, 26));
+
+        }
+        else{
+            holder.maladie.setTextColor(Color.parseColor("#066E5F"));
+
         }
         holder.desc.setText(temperatureList.get(position).getDate().substring(0,10));
     }

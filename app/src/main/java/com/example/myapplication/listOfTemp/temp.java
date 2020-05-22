@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import com.example.myapplication.R;
 import com.example.myapplication.RetrofitClient;
@@ -36,7 +37,8 @@ public class temp extends AppCompatActivity  {
     LineChart  mChart ;
     ArrayList<Entry> yValues = new ArrayList<>();
     String[] values ;
-
+    ArrayList<Entry> newy = new ArrayList<>();
+    String[] newx ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,20 +47,23 @@ public class temp extends AppCompatActivity  {
         ButterKnife.bind(this);
         SharedPreferences preferences = getSharedPreferences("myprefs", MODE_PRIVATE);
         String userId = preferences.getString("id", "");
-        String userQueryparam = "{\"user\":\"" + userId + "\"}";
-        getTemperature(userQueryparam);
+       String userQueryparam = "{\"user\":\"" + userId + "\"}";
+
+        Log.d("userid",userId);
+        getListTemperature(userQueryparam);
+
     }
 
     public  void setLineGraph(ArrayList<Entry> yValues,  String[] values) {
         mChart.setDragEnabled(true);
         mChart.setScaleEnabled(false);
         // Create Limit line
-        LimitLine upper_limit = new LimitLine(40f,"Danger");
+        LimitLine upper_limit = new LimitLine(40f,"");
         upper_limit.setLineWidth(2f);
         upper_limit.enableDashedLine(8f,5f,0f);
-        upper_limit.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_TOP);
+        upper_limit.setLabelPosition(LimitLine.LimitLabelPosition.LEFT_TOP);
         upper_limit.setTextSize(15f);
-        upper_limit.setTextColor(Color.RED);
+        upper_limit.setTextColor(Color.parseColor("#ff6633"));
 
 
         YAxis leftAxis = mChart.getAxisLeft();
@@ -71,12 +76,20 @@ public class temp extends AppCompatActivity  {
         mChart.getAxisRight().setEnabled(false);
 
         LineDataSet set1 = new LineDataSet(yValues,"Your Temperature");
-        set1.setFillAlpha(110);
+        set1.setFillAlpha(500);
 
-        set1.setColor(Color.BLUE);
-        set1.setLineWidth(2f);
-        set1.setValueTextSize(11f);
-        set1.setValueTextColor(Color.GREEN);
+        set1.setColor(Color.parseColor("#009999"));
+        set1.setLineWidth(2.5f);
+        set1.setValueTextSize(12f);
+        set1.setValueTextColor(Color.parseColor("#008ae6"));
+        set1.setCircleRadius(4f);
+        set1.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set1.setFillColor(Color.rgb(177, 210, 175));
+        set1.setDrawFilled(true);
+
+
+        set1.setCircleColor(Color.parseColor("#008ae6"));
+
         ArrayList<ILineDataSet> dataSets = new ArrayList<>();
         dataSets.add(set1);
         //Line data
@@ -91,13 +104,16 @@ public class temp extends AppCompatActivity  {
         mChart.invalidate();
     }
     public void setData(ArrayList<TemperatureModel> tempList) {
-        for(int i = 0; i < tempList.size(); i++){
+
+            for(int i = 0; i < tempList.size(); i++){
           yValues.add(new Entry(i,tempList.get(i).getDegres()));
           values[i]=tempList.get(i).getDate().substring(0,10);
         }
-
         setLineGraph(yValues,values);
         mChart.notifyDataSetChanged();
+
+
+
 
 
 
@@ -112,7 +128,12 @@ public class temp extends AppCompatActivity  {
         }
         @Override
         public String getAxisLabel(float value, AxisBase axis) {
-            return  mValues[(int)value];
+            try {
+                return  mValues[(int)value];            }
+            catch(ArrayIndexOutOfBoundsException e) {
+            return  "Error";
+            }
+
         }
 
 
@@ -123,7 +144,7 @@ public class temp extends AppCompatActivity  {
         startActivity(i);
     }
 
-    public void getTemperature(String userQueryparam) {
+    public void getListTemperature(String userQueryparam) {
 
 
         Call<ArrayList<TemperatureModel>> call = RetrofitClient.getInstance().getApi().getTemperature(
@@ -142,9 +163,17 @@ public class temp extends AppCompatActivity  {
                     listMedsRview.setAdapter(myAdapter);
                     listMedsRview.setLayoutManager(new LinearLayoutManager(getBaseContext()));
                     values=new String[tempList.size()];
-
+                    newx=new String[tempList.size()];
                     // add data
-                    setData(tempList);
+                    if (tempList.size()>0) {
+                        setData(tempList);
+
+                    }else{
+
+                        setLineGraph(newy,  newx);
+                        mChart.notifyDataSetChanged();
+
+                    }
                    // Log.d("valuess", String.valueOf(values));
                    // Log.d("valuessy", String.valueOf(yValues));
 
