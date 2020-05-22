@@ -147,10 +147,11 @@ public class add_temp extends AppCompatActivity implements DatePickerDialog.OnDa
                     .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             //  Action for 'NO' Button
-                            dialog.cancel();
                             Intent i =new Intent(add_temp.this, temp.class);
                             startActivity(i);
-                         //   Toast.makeText(getApplicationContext(),"you choose no action for alertbox",
+                            dialog.cancel();
+
+                            //   Toast.makeText(getApplicationContext(),"you choose no action for alertbox",
                                   //  Toast.LENGTH_SHORT).show();
                         }
                     });

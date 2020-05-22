@@ -83,6 +83,8 @@ public class more extends Fragment {
         SharedPreferences.Editor editor = pref.edit();
         editor.clear();
         editor.commit(); // commit changes
+
+
          Intent i =new Intent(getActivity(), LoginActivity.class);
         startActivity(i);
 
