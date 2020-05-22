@@ -67,7 +67,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="text"
-                        android:text="Please help me , rani mchomgh !" />
+                        android:text="I feel sick , i need help !" />
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
