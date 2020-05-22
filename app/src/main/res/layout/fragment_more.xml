@@ -50,7 +50,7 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconDoctors"
             android:layout_width="20dp"
-            android:layout_height="25dp"
+            android:layout_height="20dp"
             android:layout_marginTop="2dp"
             android:layout_weight="1"
             android:src="@drawable/icon4" />
@@ -63,7 +63,7 @@ tools:context=".more">
             android:layout_weight="5"
             android:text="Nearly Doctors"
             android:textColor="#000"
-            android:textSize="20dp" />
+            android:textSize="14dp" />
         <!--so our layout is set-->
     </LinearLayout>
     <LinearLayout
@@ -78,7 +78,7 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconMeasurments"
             android:layout_width="20dp"
-            android:layout_height="25dp"
+            android:layout_height="20dp"
             android:layout_marginTop="2dp"
             android:src="@drawable/temper" />
 
@@ -89,7 +89,7 @@ tools:context=".more">
             android:layout_marginLeft="25dp"
             android:text="Temperature measurements"
             android:textColor="#000"
-            android:textSize="20dp" />
+            android:textSize="14dp" />
         <!--so our layout is set-->
     </LinearLayout>
     <LinearLayout
@@ -104,7 +104,7 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconReport"
             android:layout_width="20dp"
-            android:layout_height="25dp"
+            android:layout_height="20dp"
             android:layout_marginTop="2dp"
             android:layout_weight="1"
             android:src="@drawable/envelope" />
@@ -117,7 +117,7 @@ tools:context=".more">
             android:layout_weight="5"
             android:text="Urgent SMS"
             android:textColor="#000"
-            android:textSize="20dp" />
+            android:textSize="14dp" />
         <!--so our layout is set-->
     </LinearLayout>
     <LinearLayout
@@ -132,8 +132,8 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconNotes"
             android:layout_width="20dp"
-            android:layout_height="25dp"
- android:layout_marginTop="2dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="2dp"
             android:layout_weight="1"
             android:src="@drawable/icon2" />
 
@@ -145,7 +145,7 @@ tools:context=".more">
             android:layout_weight="5"
             android:text="Notes"
             android:textColor="#000"
-            android:textSize="20dp" />
+            android:textSize="14dp" />
         <!--so our layout is set-->
     </LinearLayout>
 
@@ -188,8 +188,8 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconSettings"
             android:layout_width="20dp"
-            android:layout_height="25dp"
- android:layout_marginTop="2dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="2dp"
             android:layout_weight="1"
             android:src="@drawable/icon7" />
 
@@ -201,7 +201,7 @@ tools:context=".more">
             android:layout_weight="5"
             android:text="Settings"
             android:textColor="#000"
-            android:textSize="20dp" />
+            android:textSize="14dp" />
         <!--so our layout is set-->
     </LinearLayout>
     <LinearLayout
@@ -216,7 +216,7 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconReminder"
             android:layout_width="20dp"
-            android:layout_height="25dp"
+            android:layout_height="20dp"
             android:layout_marginTop="2dp"
             android:layout_weight="1"
             android:src="@drawable/icon9" />
@@ -230,7 +230,7 @@ tools:context=".more">
             android:layout_weight="5"
             android:text="Reminder Troubleshooting"
             android:textColor="#000"
-            android:textSize="20dp"/>
+            android:textSize="14dp" />
         <!--so our layout is set-->
     </LinearLayout>
 
@@ -246,9 +246,9 @@ tools:context=".more">
         <ImageView
             android:id="@+id/iconHelpSupport"
             android:layout_width="20dp"
-            android:layout_height="27dp"
+            android:layout_height="20dp"
 
- android:layout_marginTop="2dp"
+            android:layout_marginTop="2dp"
             android:layout_weight="1"
             android:src="@drawable/logout" />
 
@@ -259,9 +259,9 @@ tools:context=".more">
             android:layout_marginLeft="25dp"
             android:layout_weight="5"
             android:text="Log out"
-            android:textStyle="bold"
             android:textColor="#000"
-            android:textSize="20dp" />
+            android:textSize="14dp"
+            android:textStyle="bold" />
         <!--so our layout is set-->
     </LinearLayout>
 
